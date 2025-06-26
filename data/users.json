@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "123456",
+    "role": "admin",
+    "cart": []
+  },
+  {
+    "id": 2,
+    "username": "user1",
+    "password": "123456",
+    "role": "user",
+    "cart": []
+  },
+  {
+    "id": 1750928857340,
+    "username": "quang",
+    "password": "123456",
+    "role": "user",
+    "cart": [
+      {
+        "id": 1750958694670,
+        "name": "quần",
+        "price": 120000,
+        "description": "hehehehe",
+        "image": "/images/product_1750958694658.jpeg",
+        "sizes": {
+          "S": "120",
+          "M": "12",
+          "L": "1",
+          "XL": "0120"
+        },
+        "quantity": 1,
+        "size": "L"
+      }
+    ]
+  },
+  {
+    "id": 1750929771338,
+    "username": "quang1",
+    "password": "123456",
+    "role": "user",
+    "cart": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "quantity": 1
+      },
+      {
+        "id": 1002,
+        "name": "Quần jeans nam",
+        "price": 400000,
+        "description": "Quần jeans nam form slimfit, co giãn.",
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "id": 1750954633765,
+    "username": "quang2",
+    "password": "123456",
+    "role": "user",
+    "cart": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "quantity": 1
+      }
+    ]
+  }
+]

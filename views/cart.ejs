@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <h1>Giỏ hàng của bạn</h1>
+    <a href="/products">← Tiếp tục mua</a> |
+    <a href="/logout">Đăng xuất</a>
+
+    <% if (message) { %>
+        <p style="color: green;"><%= message %></p>
+    <% } %>
+
+    <% if (cart.length === 0) { %>
+        <p>Giỏ hàng của bạn đang trống.</p>
+    <% } else { %>
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Size</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Xóa</th>
+            </tr>
+
+            <% cart.forEach(item => { %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.price.toLocaleString() %> VNĐ</td>
+                <td><%= item.size %></td>
+                <td>
+                <a href="/cart/update/<%= item.id %>/<%= item.size %>/decrease">−</a>
+                <%= item.quantity %>
+                <a href="/cart/update/<%= item.id %>/<%= item.size %>/increase">+</a>
+                </td>
+                <td><%= (item.price * item.quantity).toLocaleString() %> VNĐ</td>
+                <td><a href="/cart/remove/<%= item.id %>/<%= item.size %>">Xóa</a></td>
+            </tr>
+            <% }) %>
+
+        </table>
+
+        <h3>Tổng cộng: <%= total.toLocaleString() %> VNĐ</h3>
+
+        <form method="POST" action="/cart/checkout">
+            <button type="submit">Đặt hàng </button>
+        </form>
+    <% } %>
+</body>
+</html>

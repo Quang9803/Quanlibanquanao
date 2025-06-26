@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống kê doanh thu</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <h1>Thống kê doanh thu</h1>
+    <a href="/admin/products">← Quay về quản lý sản phẩm</a> |
+    <a href="/logout">Đăng xuất</a>
+
+    <h2>Tổng quan</h2>
+    <p>Tổng số đơn hàng: <strong><%= totalOrders %></strong></p>
+    <p>Tổng doanh thu: <strong><%= totalRevenue.toLocaleString() %> VNĐ</strong></p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1750929752437,
+    "userId": 1750928857340,
+    "items": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "quantity": 1
+      }
+    ],
+    "date": "2025-06-26T09:22:32.437Z"
+  },
+  {
+    "id": 1750956215714,
+    "userId": 1750928857340,
+    "items": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "image": "/images/shirt-white.jpg",
+        "quantity": 1
+      }
+    ],
+    "date": "2025-06-26T16:43:35.714Z"
+  },
+  {
+    "id": 1750958445372,
+    "userId": 1750928857340,
+    "items": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "image": "/images/shirt-white.jpg",
+        "quantity": 1,
+        "size": "M"
+      }
+    ],
+    "date": "2025-06-26T17:20:45.372Z"
+  },
+  {
+    "id": 1750958734311,
+    "userId": 1750928857340,
+    "items": [
+      {
+        "id": 1750958694670,
+        "name": "quần",
+        "price": 120000,
+        "description": "hehehehe",
+        "image": "/images/product_1750958694658.jpeg",
+        "sizes": {
+          "S": "120",
+          "M": "12",
+          "L": "1",
+          "XL": "0120"
+        },
+        "quantity": 2,
+        "size": "L"
+      }
+    ],
+    "date": "2025-06-26T17:25:34.311Z"
+  },
+  {
+    "id": 1750958788545,
+    "userId": 1,
+    "items": [
+      {
+        "id": 1750958781172,
+        "name": "a",
+        "price": 146,
+        "description": "adfds",
+        "image": "/images/product_1750958781168.png",
+        "sizes": {
+          "S": "012",
+          "M": "0",
+          "L": "1",
+          "XL": "10"
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "date": "2025-06-26T17:26:28.545Z"
+  }
+]

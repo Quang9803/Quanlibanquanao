@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa sản phẩm</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Sửa sản phẩm</h1>
+    <a href="/admin/products">⬅ Quay lại danh sách sản phẩm</a>
+
+    <form method="POST" action="/admin/products/edit/<%= product.id %>" enctype="multipart/form-data">
+        <label>Tên sản phẩm:</label>
+        <input type="text" name="name" value="<%= product.name %>" required><br>
+
+        <label>Giá:</label>
+        <input type="number" name="price" value="<%= product.price %>" required><br>
+
+        <label>Mô tả:</label>
+        <textarea name="description" rows="3" required><%= product.description %></textarea><br>
+
+        <label>Hình ảnh hiện tại:</label><br>
+        <% if (product.image) { %>
+            <img src="<%= product.image %>" width="120"><br>
+        <% } else { %>
+            Không có ảnh<br>
+        <% } %>
+
+        <label>Chọn hình ảnh mới (nếu muốn thay):</label>
+        <input type="file" name="image" accept="image/*"><br>
+
+        <label>Số lượng theo size:</label><br>
+        <label>S: <input type="number" name="sizes[S]" min="0" value="<%= product.sizes?.S || 0 %>"></label>
+        <label>M: <input type="number" name="sizes[M]" min="0" value="<%= product.sizes?.M || 0 %>"></label>
+        <label>L: <input type="number" name="sizes[L]" min="0" value="<%= product.sizes?.L || 0 %>"></label>
+        <label>XL: <input type="number" name="sizes[XL]" min="0" value="<%= product.sizes?.XL || 0 %>"></label><br><br>
+
+        <button type="submit">Lưu thay đổi</button>
+    </form>
+</body>
+</html>
