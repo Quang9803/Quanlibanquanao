@@ -61,8 +61,16 @@ exports.logout = (req, res) => {
 
 // Trang sản phẩm
 exports.getProductsPage = (req, res) => {
-    const products = readJSON(productsFile);
-    res.render('products', { user: req.session.user, products });
+    let products = readJSON(productsFile);
+
+    // Shuffle để lấy ngẫu nhiên
+    products = products.sort(() => 0.5 - Math.random());
+    const featured = products.slice(0, 8); // lấy 8 sản phẩm ngẫu nhiên
+
+    res.render('products-home', {
+        user: req.session.user,
+        featuredProducts: featured
+    });
 };
 
 // Đặt hàng đơn lẻ
@@ -175,19 +183,22 @@ exports.checkoutCart = (req, res) => {
     const cart = req.session.cart || [];
     if (cart.length === 0) return res.redirect('/cart');
 
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); 
+
     const orders = readJSON(ordersFile);
 
     const newOrder = {
         id: Date.now(),
         userId: req.session.user.id,
         items: cart,
+        totalAmount: total,
         date: new Date().toISOString()
     };
 
     orders.push(newOrder);
     writeJSON(ordersFile, orders);
 
-    // Cập nhật lại giỏ hàng cho user trong file
+    // Cập nhật giỏ hàng trống
     const users = readJSON(usersFile);
     const user = users.find(u => u.id === req.session.user.id);
     if (user) {
@@ -197,8 +208,9 @@ exports.checkoutCart = (req, res) => {
 
     req.session.cart = [];
 
-    res.render('cart', { cart: [], total: 0, message: 'Đặt hàng thành công!' });
+    res.render('invoice', { order: newOrder }); 
 };
+
 //chi tiết sản phẩm
 exports.getProductDetail = (req, res) => {
     const { id } = req.params;

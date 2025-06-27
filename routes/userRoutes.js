@@ -26,6 +26,8 @@ router.post('/cart/checkout', authMiddleware.requireLogin, userController.checko
 
 // Đặt hàng (đơn lẻ)
 router.post('/order', authMiddleware.requireLogin, userController.placeOrder);
+// Trang chủ => Đưa về trang sản phẩm
+router.get('/', authMiddleware.requireLogin, userController.getProductsPage);
 
 // Xuất router
 module.exports = router;

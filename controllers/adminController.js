@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const usersFile = path.join(__dirname, '../data/users.json'); 
 
 const productsFile = path.join(__dirname, '../data/products.json');
 const ordersFile = path.join(__dirname, '../data/orders.json');
@@ -102,18 +103,44 @@ exports.deleteProduct = (req, res) => {
 // Trang thống kê
 exports.getStatistics = (req, res) => {
     const orders = readJSON(ordersFile);
+    const users = readJSON(usersFile);
+    const products = readJSON(productsFile);
+
     let totalRevenue = 0;
 
-    orders.forEach(order => {
-        const product = readJSON(productsFile).find(p => p.id == order.productId);
-        if (product) {
-            totalRevenue += product.price * order.quantity;
-        }
+    const detailedOrders = orders.map(order => {
+        const user = users.find(u => u.id === order.userId);
+        let items = order.items || [];
+
+        let subtotal = 0;
+        items = items.map(item => {
+            const product = products.find(p => p.id === item.id);
+            const total = item.price * item.quantity;
+            subtotal += total;
+            return {
+                name: product?.name || 'Không tìm thấy',
+                size: item.size,
+                quantity: item.quantity,
+                price: item.price,
+                total
+            };
+        });
+
+        totalRevenue += subtotal;
+
+        return {
+            id: order.id,
+            user: user?.username || 'Không rõ',
+            date: new Date(order.date).toLocaleString(),
+            items,
+            subtotal
+        };
     });
 
     res.render('statistics', {
         user: req.session.user,
-        totalRevenue,
-        totalOrders: orders.length
+        orders: detailedOrders,
+        totalOrders: detailedOrders.length,
+        totalRevenue
     });
 };
