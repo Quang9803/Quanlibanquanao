@@ -19,6 +19,13 @@
         <label>Mô tả:</label>
         <textarea name="description" rows="3" required><%= product.description %></textarea><br>
 
+        <label>Danh mục:</label>
+        <select name="category" required>
+            <option value="Nam" <%= product.category === 'Nam' ? 'selected' : '' %>>Nam</option>
+            <option value="Nữ" <%= product.category === 'Nữ' ? 'selected' : '' %>>Nữ</option>
+            <option value="Trẻ em" <%= product.category === 'Trẻ em' ? 'selected' : '' %>>Trẻ em</option>
+        </select><br>
+
         <label>Hình ảnh hiện tại:</label><br>
         <% if (product.image) { %>
             <img src="<%= product.image %>" width="120"><br>

@@ -6,22 +6,26 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Đăng ký tài khoản</h1>
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <h1>Đăng ký tài khoản</h1>
 
-    <% if (error) { %>
-        <p style="color: red;"><%= error %></p>
-    <% } %>
+            <% if (error) { %>
+                <p class="error"><%= error %></p>
+            <% } %>
 
-    <form method="POST" action="/register">
-        <label for="username">Tên đăng nhập:</label>
-        <input type="text" name="username" required><br>
+            <form method="POST" action="/register">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" name="username" required>
 
-        <label for="password">Mật khẩu:</label>
-        <input type="password" name="password" required><br>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" name="password" required>
 
-        <button type="submit">Đăng ký</button>
-    </form>
+                <button type="submit">Đăng ký</button>
+            </form>
 
-    <p>Đã có tài khoản? <a href="/login">Đăng nhập</a></p>
+            <p class="link">Đã có tài khoản? <a href="/login">Đăng nhập</a></p>
+        </div>
+    </div>
 </body>
 </html>

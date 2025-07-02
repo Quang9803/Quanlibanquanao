@@ -18,7 +18,23 @@
     "username": "quang",
     "password": "123456",
     "role": "user",
-    "cart": []
+    "cart": [
+      {
+        "id": 1750958781172,
+        "name": "a",
+        "price": 146,
+        "description": "adfds",
+        "image": "/images/product_1750958781168.png",
+        "sizes": {
+          "S": "012",
+          "M": "0",
+          "L": "1",
+          "XL": "10"
+        },
+        "quantity": 1,
+        "size": "L"
+      }
+    ]
   },
   {
     "id": 1750929771338,

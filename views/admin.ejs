@@ -16,6 +16,7 @@
             <th>Hình ảnh</th>
             <th>Tên</th>
             <th>Giá</th>
+            <th>Danh mục</th>
             <th>Mô tả</th>
             <th>Hành động</th>
         </tr>
@@ -30,6 +31,7 @@
                 </td>
                 <td><%= product.name %></td>
                 <td><%= product.price.toLocaleString() %> VNĐ</td>
+                <td><%= product.category || 'Không rõ' %></td>
                 <td><%= product.description %></td>
                 <td>
                     <form method="POST" action="/admin/products/delete/<%= product.id %>" onsubmit="return confirm('Bạn có chắc muốn xóa?')">
@@ -54,14 +56,21 @@
         <label>Mô tả:</label>
         <textarea name="description" rows="3" required></textarea><br>
 
+        <label>Danh mục:</label>
+        <select name="category" required>
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Trẻ em">Trẻ em</option>
+        </select><br>
+
         <label>Hình ảnh:</label>
         <input type="file" name="image" accept="image/*" required><br>
 
         <label>Số lượng theo size:</label><br>
-        <label>S: <input type="number" name="sizes[S]" min="0" value="0"></label>
-        <label>M: <input type="number" name="sizes[M]" min="0" value="0"></label>
-        <label>L: <input type="number" name="sizes[L]" min="0" value="0"></label>
-        <label>XL: <input type="number" name="sizes[XL]" min="0" value="0"></label><br><br>
+        <label>S: <input type="number" name="sizeS" min="0" value="0"></label>
+        <label>M: <input type="number" name="sizeM" min="0" value="0"></label>
+        <label>L: <input type="number" name="sizeL" min="0" value="0"></label>
+        <label>XL: <input type="number" name="sizeXL" min="0" value="0"></label><br><br>
 
         <button type="submit">Thêm</button>
     </form>

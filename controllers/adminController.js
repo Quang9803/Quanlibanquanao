@@ -33,18 +33,20 @@ exports.handleAddProduct = (req, res) => {
     const products = readJSON(productsFile);
 
     const newProduct = {
-        id: Date.now(),
-        name: req.body.name,
-        price: parseInt(req.body.price),
-        description: req.body.description || '',
-        image: req.file ? '/images/' + req.file.filename : '',
-        sizes: {
-            S: parseInt(req.body.sizeS || 0),
-            M: parseInt(req.body.sizeM || 0),
-            L: parseInt(req.body.sizeL || 0),
-            XL: parseInt(req.body.sizeXL || 0)
-        }
+    id: Date.now(),
+    name: req.body.name,
+    price: parseInt(req.body.price),
+    description: req.body.description || '',
+    category: req.body.category, 
+    image: req.file ? '/images/' + req.file.filename : '',
+    sizes: {
+        S: parseInt(req.body.sizeS || 0),
+        M: parseInt(req.body.sizeM || 0),
+        L: parseInt(req.body.sizeL || 0),
+        XL: parseInt(req.body.sizeXL || 0)
+    }
     };
+
 
     products.push(newProduct);
     writeJSON(productsFile, products);
@@ -71,7 +73,7 @@ exports.handleEditProduct = (req, res) => {
         products[index].name = req.body.name;
         products[index].price = parseFloat(req.body.price);
         products[index].description = req.body.description;
-
+        products[index].category = req.body.category;
         // Cập nhật hình ảnh nếu có ảnh mới
         if (req.file) {
             products[index].image = '/images/' + req.file.filename;
