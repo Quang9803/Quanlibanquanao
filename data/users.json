@@ -20,19 +20,36 @@
     "role": "user",
     "cart": [
       {
-        "id": 1750958781172,
-        "name": "a",
-        "price": 146,
-        "description": "adfds",
-        "image": "/images/product_1750958781168.png",
+        "id": 1752000000001,
+        "name": "Váy hoa mùa hè",
+        "price": 320000,
+        "description": "Váy hoa dáng dài, chất liệu voan mát mẻ.",
+        "image": "/images/product_1750960806958.jpeg",
         "sizes": {
-          "S": "012",
-          "M": "0",
-          "L": "1",
-          "XL": "10"
+          "S": 5,
+          "M": 10,
+          "L": 7,
+          "XL": 3
         },
+        "category": "Nữ",
         "quantity": 1,
-        "size": "L"
+        "size": "S"
+      },
+      {
+        "id": 1750984025935,
+        "name": "kj",
+        "price": 23445,
+        "description": "adfdfqqưewe",
+        "image": "/images/product_1750984025928.jpg",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
       }
     ]
   },

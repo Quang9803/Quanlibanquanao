@@ -25,13 +25,14 @@
       "L": 0,
       "XL": 0
     },
-    "category": "Nữ"
+    "category": "Nam"
   },
   {
     "id": 1750928505933,
     "name": "áo",
     "price": 12000,
     "description": "áo",
+    "category": "Nam",
     "image": "/images/product_1750960914444.jpeg",
     "sizes": {
       "S": 0,
@@ -46,6 +47,7 @@
     "price": 120000,
     "description": "hehehehe",
     "image": "/images/product_1750958694658.jpeg",
+    "category": "Nam",
     "sizes": {
       "S": "120",
       "M": "12",
@@ -77,7 +79,8 @@
       "M": "1",
       "L": "1",
       "XL": "1"
-    }
+    },
+    "category": "Nam"
   },
   {
     "id": 1750959420240,
@@ -90,7 +93,8 @@
       "M": "1",
       "L": "1",
       "XL": "1"
-    }
+    },
+    "category": "Nam"
   },
   {
     "id": 1750959865794,
@@ -103,7 +107,8 @@
       "M": "12",
       "L": "1",
       "XL": "1"
-    }
+    },
+    "category": "Nam"
   },
   {
     "id": 1750960086937,
@@ -116,7 +121,8 @@
       "M": 0,
       "L": 0,
       "XL": 0
-    }
+    },
+    "category": "Nam"
   },
   {
     "id": 1750984025935,
@@ -129,14 +135,15 @@
       "M": 0,
       "L": 0,
       "XL": 0
-    }
+    },
+    "category": "Nam"
   },
   {
     "id": 1751391402774,
     "name": "dsfbsdfb",
     "price": 12334124,
     "description": "èádfàdf",
-    "category": "Nữ",
+    "category": "Nam",
     "image": "/images/product_1751391402763.jpeg",
     "sizes": {
       "S": 1,
@@ -144,5 +151,229 @@
       "L": 12,
       "XL": 12
     }
+  },
+  {
+    "id": 1752000000001,
+    "name": "Váy hoa mùa hè",
+    "price": 320000,
+    "description": "Váy hoa dáng dài, chất liệu voan mát mẻ.",
+    "image": "/images/product_1750960806958.jpeg",
+    "sizes": {
+      "S": 5,
+      "M": 10,
+      "L": 7,
+      "XL": 3
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000002,
+    "name": "Áo croptop trắng",
+    "price": 180000,
+    "description": "Áo croptop form ôm, phù hợp đi chơi.",
+    "image": "/images/product_1750960822551.png",
+    "sizes": {
+      "S": 12,
+      "M": 8,
+      "L": 6,
+      "XL": 2
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000003,
+    "name": "Chân váy ngắn",
+    "price": 210000,
+    "description": "Chân váy ngắn chữ A, chất kaki.",
+    "image": "/images/product_1750960914444.jpeg",
+    "sizes": {
+      "S": 7,
+      "M": 9,
+      "L": 4,
+      "XL": 0
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000004,
+    "name": "Quần ống rộng",
+    "price": 290000,
+    "description": "Quần nữ ống suông vải linen thoải mái.",
+    "image": "/images/product_1750958694658.jpeg",
+    "sizes": {
+      "S": 6,
+      "M": 5,
+      "L": 4,
+      "XL": 3
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000005,
+    "name": "Áo thun nữ basic",
+    "price": 150000,
+    "description": "Áo thun cotton 100%, dễ phối đồ.",
+    "image": "/images/product_1750958781168.png",
+    "sizes": {
+      "S": 10,
+      "M": 15,
+      "L": 12,
+      "XL": 5
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000006,
+    "name": "Set đồ công sở",
+    "price": 520000,
+    "description": "Set áo vest + quần tây lịch sự.",
+    "image": "/images/product_1750959117127.jpg",
+    "sizes": {
+      "S": 2,
+      "M": 3,
+      "L": 1,
+      "XL": 0
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000007,
+    "name": "Đầm xòe tay phồng",
+    "price": 450000,
+    "description": "Đầm xòe nữ tính, tay phồng cổ điển.",
+    "image": "/images/product_1750959420238.jpeg",
+    "sizes": {
+      "S": 8,
+      "M": 10,
+      "L": 6,
+      "XL": 1
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000008,
+    "name": "Áo kiểu nơ cổ",
+    "price": 240000,
+    "description": "Áo kiểu thanh lịch với chi tiết nơ cổ.",
+    "image": "/images/product_1750959865792.jpeg",
+    "sizes": {
+      "S": 5,
+      "M": 7,
+      "L": 3,
+      "XL": 1
+    },
+    "category": "Nữ"
+  },
+  {
+    "id": 1752000000009,
+    "name": "Áo thun bé trai",
+    "price": 90000,
+    "description": "Áo thun in hình siêu nhân, chất liệu cotton.",
+    "image": "/images/product_1750960086932.jpeg",
+    "sizes": {
+      "S": 10,
+      "M": 10,
+      "L": 5,
+      "XL": 0
+    },
+    "category": "Trẻ em"
+  },
+  {
+    "id": 1752000000010,
+    "name": "Váy công chúa",
+    "price": 180000,
+    "description": "Váy ren công chúa màu hồng, bé gái rất thích.",
+    "image": "/images/product_1750984025928.jpg",
+    "sizes": {
+      "S": 6,
+      "M": 4,
+      "L": 2,
+      "XL": 1
+    },
+    "category": "Trẻ em"
+  },
+  {
+    "id": 1752000000011,
+    "name": "Bộ mặc nhà trẻ em",
+    "price": 120000,
+    "description": "Bộ đồ thun thoáng mát, phù hợp ở nhà và đi chơi.",
+    "image": "/images/product_1751391402763.jpeg",
+    "sizes": {
+      "S": 12,
+      "M": 11,
+      "L": 10,
+      "XL": 0
+    },
+    "category": "Trẻ em"
+  },
+  {
+    "id": 1752000000012,
+    "name": "Áo khoác gió trẻ em",
+    "price": 200000,
+    "description": "Áo khoác chống gió nhẹ, phù hợp thời tiết giao mùa.",
+    "image": "/images/product_1750960806958.jpeg",
+    "sizes": {
+      "S": 4,
+      "M": 4,
+      "L": 2,
+      "XL": 0
+    },
+    "category": "Trẻ em"
+  },
+  {
+    "id": 1752000000013,
+    "name": "Quần short bé gái",
+    "price": 85000,
+    "description": "Quần short jeans co giãn, bé gái năng động.",
+    "image": "/images/product_1750960822551.png",
+    "sizes": {
+      "S": 10,
+      "M": 8,
+      "L": 5,
+      "XL": 0
+    },
+    "category": "Trẻ em"
+  },
+  {
+    "id": 1752000000014,
+    "name": "Set bộ thể thao bé trai",
+    "price": 150000,
+    "description": "Set thể thao in hình siêu nhân.",
+    "image": "/images/product_1750960914444.jpeg",
+    "sizes": {
+      "S": 8,
+      "M": 6,
+      "L": 4,
+      "XL": 2
+    },
+    "category": "Trẻ em"
+  },
+  {
+    "id": 1752000000015,
+    "name": "Đồ ngủ bé gái",
+    "price": 95000,
+    "description": "Đồ ngủ cotton hình thú dễ thương.",
+    "image": "/images/product_1750958694658.jpeg",
+    "sizes": {
+      "S": 9,
+      "M": 8,
+      "L": 6,
+      "XL": 1
+    },
+    "category": "Trẻ em"
+  },
+  {
+    "id": 1752000000016,
+    "name": "Áo len trẻ em",
+    "price": 130000,
+    "description": "Áo len giữ ấm cho bé mùa lạnh.",
+    "image": "/images/product_1750958781168.png",
+    "sizes": {
+      "S": 4,
+      "M": 3,
+      "L": 2,
+      "XL": 1
+    },
+    "category": "Trẻ em"
   }
 ]

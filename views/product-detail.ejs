@@ -16,7 +16,7 @@
       margin-bottom: 20px;
     }
     .price {
-      color: #e53935;
+      color: #000000;
       font-size: 24px;
       font-weight: bold;
     }
@@ -61,14 +61,14 @@
           <label><input type="radio" name="size" value="XL"> XL</label>
         </div>
 
-        <button type="submit">🛒 Thêm vào giỏ</button>
+        <button type="submit">Thêm vào giỏ hàng</button>
       </form>
 
       <!-- FORM mua ngay -->
       <form method="POST" action="/checkout-now">
         <input type="hidden" name="productId" value="<%= product.id %>">
         <input type="hidden" name="quantity" value="1">
-        <button type="submit">💳 Mua ngay</button>
+        <button type="submit">Mua ngay</button>
       </form>
     </div>
 

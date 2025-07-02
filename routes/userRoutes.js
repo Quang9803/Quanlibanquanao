@@ -3,6 +3,8 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const authMiddleware = require('../middlewares/authMiddleware');
 
+
+
 // Trang chủ
 router.get('/', userController.getHomePage);
 
@@ -28,6 +30,10 @@ router.post('/cart/checkout', authMiddleware.requireLogin, userController.checko
 router.post('/order', authMiddleware.requireLogin, userController.placeOrder);
 // Trang chủ => Đưa về trang sản phẩm
 router.get('/', authMiddleware.requireLogin, userController.getProductsPage);
+//Hiển thị tất cả sp
+router.get('/products/category/:category', userController.getProductsByCategory);
+
+
 
 // Xuất router
 module.exports = router;

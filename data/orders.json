@@ -213,5 +213,59 @@
     ],
     "totalAmount": 23,
     "date": "2025-06-27T00:47:01.728Z"
+  },
+  {
+    "id": 1751475081378,
+    "userId": 1750928857340,
+    "items": [
+      {
+        "id": 1750958781172,
+        "name": "a",
+        "price": 146,
+        "description": "adfds",
+        "image": "/images/product_1750958781168.png",
+        "sizes": {
+          "S": "012",
+          "M": "0",
+          "L": "1",
+          "XL": "10"
+        },
+        "quantity": 1,
+        "size": "L"
+      },
+      {
+        "id": 1750958781172,
+        "name": "a",
+        "price": 146,
+        "description": "adfds",
+        "image": "/images/product_1750958781168.png",
+        "sizes": {
+          "S": "012",
+          "M": "0",
+          "L": "1",
+          "XL": "10"
+        },
+        "quantity": 1,
+        "size": "XL"
+      },
+      {
+        "id": 1751391402774,
+        "name": "dsfbsdfb",
+        "price": 12334124,
+        "description": "èádfàdf",
+        "category": "Nữ",
+        "image": "/images/product_1751391402763.jpeg",
+        "sizes": {
+          "S": 1,
+          "M": 12,
+          "L": 12,
+          "XL": 12
+        },
+        "quantity": 1,
+        "size": "L"
+      }
+    ],
+    "totalAmount": 12334416,
+    "date": "2025-07-02T16:51:21.378Z"
   }
 ]

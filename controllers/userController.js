@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcryptjs');
 
 // Đường dẫn đến file dữ liệu
 const usersFile = path.join(__dirname, '../data/users.json');
@@ -27,7 +26,7 @@ exports.getLoginPage = (req, res) => {
     res.render('login', { error: null });
 };
 
-// Xử lý đăng nhập
+// Xử lý đăng nhập (không mã hóa)
 exports.handleLogin = (req, res) => {
     const { username, password } = req.body;
     const users = readJSON(usersFile);
@@ -41,8 +40,6 @@ exports.handleLogin = (req, res) => {
 
     return res.render('login', { error: 'Sai tên đăng nhập hoặc mật khẩu' });
 };
-
-
 
 // Xử lý đăng xuất (lưu giỏ vào file)
 exports.logout = (req, res) => {
@@ -61,62 +58,49 @@ exports.logout = (req, res) => {
 
 // Trang sản phẩm
 exports.getProductsPage = (req, res) => {
-    let products = readJSON(productsFile);
+    const products = readJSON(productsFile);
 
-    // Shuffle để lấy ngẫu nhiên
-    products = products.sort(() => 0.5 - Math.random());
-    const featured = products.slice(0, 8); // lấy 8 sản phẩm ngẫu nhiên
+    const featuredProducts = [...products].sort(() => 0.5 - Math.random()).slice(0, 8);
+    const maleProducts = products.filter(p => p.category === 'Nam').slice(0, 8);
+    const femaleProducts = products.filter(p => p.category === 'Nữ').slice(0, 8);
+    const kidsProducts = products.filter(p => p.category === 'Trẻ em').slice(0, 8);
 
     res.render('products-home', {
         user: req.session.user,
-        featuredProducts: featured
+        featuredProducts,
+        maleProducts,
+        femaleProducts,
+        kidsProducts
     });
 };
 
-// Đặt hàng đơn lẻ
-exports.placeOrder = (req, res) => {
-    const { productId, quantity } = req.body;
-    const orders = readJSON(ordersFile);
-    const newOrder = {
-        id: Date.now(),
-        user: req.session.user.username,
-        productId,
-        quantity: parseInt(quantity),
-        date: new Date().toISOString()
-    };
-    orders.push(newOrder);
-    writeJSON(ordersFile, orders);
-    res.redirect('/products');
-};
+// Xem sản phẩm theo danh mục
+exports.getProductsByCategory = (req, res) => {
+    const category = decodeURIComponent(req.params.category);
+    const products = readJSON(productsFile);
+    let filtered = [];
 
-// Trang đăng ký
-exports.getRegisterPage = (req, res) => {
-    res.render('register', { error: null });
-};
-
-// Xử lý đăng ký
-exports.handleRegister = (req, res) => {
-    const { username, password } = req.body;
-    const users = readJSON(usersFile);
-
-    const existingUser = users.find(u => u.username === username);
-    if (existingUser) {
-        return res.render('register', { error: 'Tên đăng nhập đã tồn tại' });
+    if (category === 'Sản phẩm mới') {
+        filtered = [...products].sort(() => 0.5 - Math.random()).slice(0, 20);
+    } else {
+        filtered = products.filter(p => p.category === category);
     }
 
-    const hashedPassword = bcrypt.hashSync(password, 10);
+    res.render('products-list', {
+        title: `Danh mục: ${category}`,
+        categoryTitle: category,
+        products: filtered,
+        user: req.session.user
+    });
+};
 
-    const newUser = {
-        id: Date.now(),
-        username,
-        password: hashedPassword,
-        role: 'user',
-        cart: [] // 👈 Thêm giỏ hàng mặc định
-    };
-
-    users.push(newUser);
-    writeJSON(usersFile, users);
-    res.redirect('/login');
+// Trang chi tiết sản phẩm
+exports.getProductDetail = (req, res) => {
+    const { id } = req.params;
+    const products = readJSON(productsFile);
+    const product = products.find(p => p.id == id);
+    if (!product) return res.status(404).send('Không tìm thấy sản phẩm');
+    res.render('product-detail', { product });
 };
 
 // Thêm vào giỏ hàng
@@ -126,12 +110,9 @@ exports.addToCart = (req, res) => {
     const product = products.find(p => p.id == productId);
 
     if (!product) return res.redirect('/products');
-
     if (!req.session.cart) req.session.cart = [];
 
     const cart = req.session.cart;
-
-    // Kiểm tra trùng sản phẩm + size
     const existing = cart.find(p => p.id == product.id && p.size == size);
 
     if (existing) {
@@ -140,7 +121,7 @@ exports.addToCart = (req, res) => {
         cart.push({
             ...product,
             quantity: 1,
-            size: size || "M" // mặc định nếu không có
+            size: size || "M"
         });
     }
 
@@ -177,6 +158,21 @@ exports.updateCartQuantity = (req, res) => {
     res.redirect('/cart');
 };
 
+// Đặt hàng đơn lẻ
+exports.placeOrder = (req, res) => {
+    const { productId, quantity } = req.body;
+    const orders = readJSON(ordersFile);
+    const newOrder = {
+        id: Date.now(),
+        user: req.session.user.username,
+        productId,
+        quantity: parseInt(quantity),
+        date: new Date().toISOString()
+    };
+    orders.push(newOrder);
+    writeJSON(ordersFile, orders);
+    res.redirect('/products');
+};
 
 // Đặt hàng toàn bộ giỏ hàng
 exports.checkoutCart = (req, res) => {
@@ -184,7 +180,6 @@ exports.checkoutCart = (req, res) => {
     if (cart.length === 0) return res.redirect('/cart');
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); 
-
     const orders = readJSON(ordersFile);
 
     const newOrder = {
@@ -198,7 +193,6 @@ exports.checkoutCart = (req, res) => {
     orders.push(newOrder);
     writeJSON(ordersFile, orders);
 
-    // Cập nhật giỏ hàng trống
     const users = readJSON(usersFile);
     const user = users.find(u => u.id === req.session.user.id);
     if (user) {
@@ -207,15 +201,32 @@ exports.checkoutCart = (req, res) => {
     }
 
     req.session.cart = [];
-
     res.render('invoice', { order: newOrder }); 
 };
 
-//chi tiết sản phẩm
-exports.getProductDetail = (req, res) => {
-    const { id } = req.params;
-    const products = readJSON(productsFile);
-    const product = products.find(p => p.id == id);
-    if (!product) return res.status(404).send('Không tìm thấy sản phẩm');
-    res.render('product-detail', { product });
+// Trang đăng ký (không dùng mã hóa)
+exports.getRegisterPage = (req, res) => {
+    res.render('register', { error: null });
+};
+
+exports.handleRegister = (req, res) => {
+    const { username, password } = req.body;
+    const users = readJSON(usersFile);
+
+    const existingUser = users.find(u => u.username === username);
+    if (existingUser) {
+        return res.render('register', { error: 'Tên đăng nhập đã tồn tại' });
+    }
+
+    const newUser = {
+        id: Date.now(),
+        username,
+        password,
+        role: 'user',
+        cart: []
+    };
+
+    users.push(newUser);
+    writeJSON(usersFile, users);
+    res.redirect('/login');
 };
