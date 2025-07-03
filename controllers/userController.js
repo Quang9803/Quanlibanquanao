@@ -185,6 +185,7 @@ exports.checkoutCart = (req, res) => {
     const newOrder = {
         id: Date.now(),
         userId: req.session.user.id,
+        username: req.session.user.username,
         items: cart,
         totalAmount: total,
         date: new Date().toISOString()
@@ -201,7 +202,10 @@ exports.checkoutCart = (req, res) => {
     }
 
     req.session.cart = [];
-    res.render('invoice', { order: newOrder }); 
+    res.render('invoice', {
+    order: newOrder,
+    user: req.session.user 
+});
 };
 
 // Trang đăng ký (không dùng mã hóa)

@@ -27,4 +27,6 @@ router.post('/products/edit/:id', upload.single('image'), adminController.handle
 
 // Thống kê doanh thu
 router.get('/statistics', adminController.getStatistics);
+
+
 module.exports = router;

@@ -126,4 +126,50 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #FDFFF5;
+      border-bottom: 1px solid #ccc;
+    }
 
+    .admin-header h1 {
+      margin: 0;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .admin-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      margin: 0;
+    }
+
+    .admin-btn {
+      padding: 10px 20px;
+      border: none;
+      background: linear-gradient(45deg, #b6d37e, #cbd15a);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .admin-btn:hover {
+      background: linear-gradient(45deg, #addb71, #b9d848);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .admin-btn.logout {
+      background: linear-gradient(45deg, #f44336, #c62828);
+    }
+
+    .admin-btn.logout:hover {
+      background: linear-gradient(45deg, #f86161, #dd1a1a);
+    }

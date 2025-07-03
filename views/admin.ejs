@@ -6,9 +6,14 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Chào quản trị viên <%= user.username %></h1>
-    <a href="/logout">Đăng xuất</a> |
-    <a href="/admin/statistics">Xem thống kê</a>
+    <div class="admin-header">
+        <h1>Chào quản trị viên <%= user.username %></h1>
+        <div class="admin-actions">
+            <a href="/admin/statistics" class="admin-btn">Xem thống kê</a>
+            <a href="/logout" class="admin-btn logout">Đăng xuất</a>
+        </div>
+    </div>
+
 
     <h2>Danh sách sản phẩm</h2>
     <table border="1" cellpadding="8">

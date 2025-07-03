@@ -18,56 +18,7 @@
     "username": "quang",
     "password": "123456",
     "role": "user",
-    "cart": [
-      {
-        "id": 1752000000001,
-        "name": "Váy hoa mùa hè",
-        "price": 320000,
-        "description": "Váy hoa dáng dài, chất liệu voan mát mẻ.",
-        "image": "/images/product_1750960806958.jpeg",
-        "sizes": {
-          "S": 5,
-          "M": 10,
-          "L": 7,
-          "XL": 3
-        },
-        "category": "Nữ",
-        "quantity": 1,
-        "size": "S"
-      },
-      {
-        "id": 1750984025935,
-        "name": "kj",
-        "price": 23445,
-        "description": "adfdfqqưewe",
-        "image": "/images/product_1750984025928.jpg",
-        "sizes": {
-          "S": 0,
-          "M": 0,
-          "L": 0,
-          "XL": 0
-        },
-        "category": "Nam",
-        "quantity": 1,
-        "size": "S"
-      },
-      {
-        "id": 1752000000013,
-        "name": "Quần short bé gái",
-        "price": 85000,
-        "description": "Quần short jeans co giãn, bé gái năng động.",
-        "image": "/images/product_1750960822551.png",
-        "sizes": {
-          "S": 10,
-          "M": 8,
-          "L": 5,
-          "XL": 0
-        },
-        "category": "Trẻ em",
-        "quantity": 1,
-        "size": "M"
-      }
-    ]
+    "cart": []
   },
   {
     "id": 1750929771338,
