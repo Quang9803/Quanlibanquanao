@@ -4,7 +4,24 @@
     "username": "admin",
     "password": "123456",
     "role": "admin",
-    "cart": []
+    "cart": [
+      {
+        "id": 1750958694670,
+        "name": "quần",
+        "price": 120000,
+        "description": "hehehehe",
+        "image": "/images/product_1750958694658.jpeg",
+        "category": "Nam",
+        "sizes": {
+          "S": "120",
+          "M": "12",
+          "L": "1",
+          "XL": "0120"
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ]
   },
   {
     "id": 2,
@@ -18,7 +35,8 @@
     "username": "quang",
     "password": "123456",
     "role": "user",
-    "cart": []
+    "cart": [],
+    "favorites": []
   },
   {
     "id": 1750929771338,

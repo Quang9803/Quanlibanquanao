@@ -8,6 +8,7 @@
 <body>
     <%- include('partials/header') %>
      <a href="/products">← Tiếp tục mua</a> 
+     <div class="cart-container">
     <h1>Giỏ hàng của bạn</h1>
     <% if (message) { %>
         <p style="color: green;"><%= message %></p>
@@ -45,9 +46,12 @@
 
         <h3>Tổng cộng: <%= total.toLocaleString() %> VNĐ</h3>
 
-        <form method="POST" action="/cart/checkout">
-            <button type="submit">Đặt hàng </button>
+        <form action="/cart/checkout" method="POST">
+        <button class="checkout-btn">Đặt hàng</button>
         </form>
     <% } %>
+    </div>
+    <%- include('partials/footer') %>
+
 </body>
 </html>

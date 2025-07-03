@@ -445,5 +445,424 @@
     ],
     "totalAmount": 180000,
     "date": "2025-07-03T04:32:11.699Z"
+  },
+  {
+    "id": 1751559362840,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1752000000011,
+        "name": "Bộ mặc nhà trẻ em",
+        "price": 120000,
+        "description": "Bộ đồ thun thoáng mát, phù hợp ở nhà và đi chơi.",
+        "image": "/images/product_1751391402763.jpeg",
+        "sizes": {
+          "S": 12,
+          "M": 11,
+          "L": 10,
+          "XL": 0
+        },
+        "category": "Trẻ em",
+        "quantity": 5,
+        "size": "L"
+      },
+      {
+        "id": 1750984025935,
+        "name": "kj",
+        "price": 23445,
+        "description": "adfdfqqưewe",
+        "image": "/images/product_1750984025928.jpg",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1752000000004,
+        "name": "Quần ống rộng",
+        "price": 290000,
+        "description": "Quần nữ ống suông vải linen thoải mái.",
+        "image": "/images/product_1750958694658.jpeg",
+        "sizes": {
+          "S": 6,
+          "M": 5,
+          "L": 4,
+          "XL": 3
+        },
+        "category": "Nữ",
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1750960086937,
+        "name": "qư",
+        "price": 12,
+        "description": "12",
+        "image": "/images/product_1750960086932.jpeg",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1752000000007,
+        "name": "Đầm xòe tay phồng",
+        "price": 450000,
+        "description": "Đầm xòe nữ tính, tay phồng cổ điển.",
+        "image": "/images/product_1750959420238.jpeg",
+        "sizes": {
+          "S": 8,
+          "M": 10,
+          "L": 6,
+          "XL": 1
+        },
+        "category": "Nữ",
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1752000000008,
+        "name": "Áo kiểu nơ cổ",
+        "price": 240000,
+        "description": "Áo kiểu thanh lịch với chi tiết nơ cổ.",
+        "image": "/images/product_1750959865792.jpeg",
+        "sizes": {
+          "S": 5,
+          "M": 7,
+          "L": 3,
+          "XL": 1
+        },
+        "category": "Nữ",
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1752000000010,
+        "name": "Váy công chúa",
+        "price": 180000,
+        "description": "Váy ren công chúa màu hồng, bé gái rất thích.",
+        "image": "/images/product_1750984025928.jpg",
+        "sizes": {
+          "S": 6,
+          "M": 4,
+          "L": 2,
+          "XL": 1
+        },
+        "category": "Trẻ em",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 1783457,
+    "date": "2025-07-03T16:16:02.840Z"
+  },
+  {
+    "id": 1751559737957,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1750959117129,
+        "name": "d",
+        "price": 1234,
+        "description": "ádsđấ",
+        "image": "/images/product_1750959117127.jpg",
+        "sizes": {
+          "S": "12",
+          "M": "1",
+          "L": "1",
+          "XL": "1"
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1750958694670,
+        "name": "quần",
+        "price": 120000,
+        "description": "hehehehe",
+        "image": "/images/product_1750958694658.jpeg",
+        "category": "Nam",
+        "sizes": {
+          "S": "120",
+          "M": "12",
+          "L": "1",
+          "XL": "0120"
+        },
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1752000000014,
+        "name": "Set bộ thể thao bé trai",
+        "price": 150000,
+        "description": "Set thể thao in hình siêu nhân.",
+        "image": "/images/product_1750960914444.jpeg",
+        "sizes": {
+          "S": 8,
+          "M": 6,
+          "L": 4,
+          "XL": 2
+        },
+        "category": "Trẻ em",
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1752000000009,
+        "name": "Áo thun bé trai",
+        "price": 90000,
+        "description": "Áo thun in hình siêu nhân, chất liệu cotton.",
+        "image": "/images/product_1750960086932.jpeg",
+        "sizes": {
+          "S": 10,
+          "M": 10,
+          "L": 5,
+          "XL": 0
+        },
+        "category": "Trẻ em",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 361234,
+    "date": "2025-07-03T16:22:17.957Z"
+  },
+  {
+    "id": 1751559924666,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1750959865794,
+        "name": "a",
+        "price": 23,
+        "description": "á",
+        "image": "/images/product_1750959865792.jpeg",
+        "sizes": {
+          "S": "12",
+          "M": "12",
+          "L": "1",
+          "XL": "1"
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 23,
+    "date": "2025-07-03T16:25:24.666Z"
+  },
+  {
+    "id": 1751559990642,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1752000000008,
+        "name": "Áo kiểu nơ cổ",
+        "price": 240000,
+        "description": "Áo kiểu thanh lịch với chi tiết nơ cổ.",
+        "image": "/images/product_1750959865792.jpeg",
+        "sizes": {
+          "S": 5,
+          "M": 7,
+          "L": 3,
+          "XL": 1
+        },
+        "category": "Nữ",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 240000,
+    "date": "2025-07-03T16:26:30.642Z"
+  },
+  {
+    "id": 1751560196838,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1752000000004,
+        "name": "Quần ống rộng",
+        "price": 290000,
+        "description": "Quần nữ ống suông vải linen thoải mái.",
+        "image": "/images/product_1750958694658.jpeg",
+        "sizes": {
+          "S": 6,
+          "M": 5,
+          "L": 4,
+          "XL": 3
+        },
+        "category": "Nữ",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 290000,
+    "date": "2025-07-03T16:29:56.838Z"
+  },
+  {
+    "id": 1751560279823,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1752000000007,
+        "name": "Đầm xòe tay phồng",
+        "price": 450000,
+        "description": "Đầm xòe nữ tính, tay phồng cổ điển.",
+        "image": "/images/product_1750959420238.jpeg",
+        "sizes": {
+          "S": 8,
+          "M": 10,
+          "L": 6,
+          "XL": 1
+        },
+        "category": "Nữ",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 450000,
+    "date": "2025-07-03T16:31:19.823Z"
+  },
+  {
+    "id": 1751560295087,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1750960086937,
+        "name": "qư",
+        "price": 12,
+        "description": "12",
+        "image": "/images/product_1750960086932.jpeg",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 12,
+    "date": "2025-07-03T16:31:35.087Z"
+  },
+  {
+    "id": 1751560334911,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "image": "/images/product_1750960806958.jpeg",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 250000,
+    "date": "2025-07-03T16:32:14.911Z"
+  },
+  {
+    "id": 1751566212013,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "image": "/images/product_1750960806958.jpeg",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "category": "Nam",
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 250000,
+    "date": "2025-07-03T18:10:12.013Z"
+  },
+  {
+    "id": 1751572751093,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570326886,
+        "name": "ÁO POLO COOLMAX® SLIM FIT",
+        "price": 399,
+        "description": "Áo polo bằng thun cá sấu nhẹ làm từ cotton pha, có cổ, nẹp khuy và tay ngắn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn. Áo kết hợp vải tính năng COOLMAX® - một dạng sợi polyester độc đáo, mềm mại, thoải mái và nhanh khô giúp hút ẩm và điều chỉnh nhiệt độ hiệu quả.",
+        "category": "Nam",
+        "image": "/images/product_1751570326880.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 6,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 2394,
+    "date": "2025-07-03T19:59:11.093Z"
+  },
+  {
+    "id": 1751572774335,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751569753938,
+        "name": "ÁO POLO COOLMAX® SLIM FIT",
+        "price": 399000,
+        "description": "Áo polo bằng thun cá sấu nhẹ làm từ cotton pha, có cổ, nẹp khuy và tay ngắn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn. Áo kết hợp vải tính năng COOLMAX® - một dạng sợi polyester độc đáo, mềm mại, thoải mái và nhanh khô giúp hút ẩm và điều chỉnh nhiệt độ hiệu quả.",
+        "category": "Nam",
+        "image": "/images/product_1751570243169.avif",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "quantity": 5,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 1995000,
+    "date": "2025-07-03T19:59:34.335Z"
   }
 ]

@@ -234,3 +234,20 @@ exports.handleRegister = (req, res) => {
     writeJSON(usersFile, users);
     res.redirect('/login');
 };
+//hàm tìm kiếm
+exports.searchProducts = (req, res) => {
+    const query = req.query.q.toLowerCase();
+    const products = readJSON(productsFile);
+
+    const results = products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.description.toLowerCase().includes(query)
+    );
+
+    res.render('products-list', {
+        title: `Kết quả tìm kiếm cho "${req.query.q}"`,
+        categoryTitle: 'Kết quả tìm kiếm',
+        products: results,
+        user: req.session.user
+    });
+};

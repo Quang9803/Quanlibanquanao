@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>HÓA ĐƠN MUA HÀNG</h1>
+    <div class="invoice-container">
+  <h1>Hóa đơn mua hàng</h1>
     <p><strong>Mã đơn hàng:</strong> <%= order.id %></p>
     <p><strong>Khách hàng:</strong> <%= order.username %></p>
     <p><strong>Ngày đặt:</strong> <%= new Date(order.date).toLocaleString() %></p>
@@ -31,7 +32,10 @@
     </table>
 
     <h3>Tổng cộng: <%= order.totalAmount.toLocaleString() %> VNĐ</h3>
-    <button onclick="window.print()">In hóa đơn</button> |
-    <a href="/products">Tiếp tục mua sắm</a>
+    <div class="invoice-buttons">
+    <button onclick="window.print()">In hóa đơn</button>
+    <a href="/products"><button>Tiếp tục mua sắm</button></a>
+  </div>
+</div>
 </body>
 </html>

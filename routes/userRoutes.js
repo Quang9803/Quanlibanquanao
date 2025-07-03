@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
+router.get('/search', userController.searchProducts);
 const authMiddleware = require('../middlewares/authMiddleware');
 
 
@@ -32,7 +33,6 @@ router.post('/order', authMiddleware.requireLogin, userController.placeOrder);
 router.get('/', authMiddleware.requireLogin, userController.getProductsPage);
 //Hiển thị tất cả sp
 router.get('/products/category/:category', userController.getProductsByCategory);
-
 
 
 // Xuất router

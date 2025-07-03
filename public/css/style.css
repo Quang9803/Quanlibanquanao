@@ -65,11 +65,16 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #FDFFF5;
-    padding: 10px 30px;
+    padding: 16px 24px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     font-family: Arial, sans-serif;
 }
-
+.navbar-left,
+.navbar-right,
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
 .navbar-left a {
     font-weight: bold;
     text-decoration: none;
@@ -88,6 +93,22 @@ body {
 .navbar-right a:hover {
     color: #4CAF50;
 }
+.navbar-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar-search {
+  display: flex;
+  gap: 8px;
+}
+
+.navbar-search input {
+  padding: 6px 120px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
 .product-card a,
 .product-card a * {
     text-decoration: none;
@@ -173,3 +194,285 @@ body {
     .admin-btn.logout:hover {
       background: linear-gradient(45deg, #f86161, #dd1a1a);
     }
+    .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #b6d37e, #cbd15a);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #addb71, #b9d848);
+    transform: translateY(-2px);
+}
+
+.btn.buy {
+    background: linear-gradient(45deg, #f44336, #c62828);
+}
+
+.btn.buy:hover {
+    background: linear-gradient(45deg, #f86161, #dd1a1a);
+}
+.cart-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #FDFFF5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.checkout-btn {
+    background: linear-gradient(45deg, #b6d37e, #cbd15a);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0; /* căn giữa */
+}
+
+.checkout-btn:hover {
+    background: linear-gradient(45deg, #addb71, #b9d848);
+}
+.cart-container a {
+    color: black;
+    text-decoration: none;
+}
+.cart-container a:hover {
+    text-decoration: none;
+    background-color: #eee;
+}
+.invoice-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.invoice-container table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.invoice-container th,
+.invoice-container td {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+.invoice-container th {
+  background-color: #FDFFF5;
+  font-weight: bold;
+}
+
+.invoice-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.invoice-buttons button {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #b6d37e, #cbd15a);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.invoice-buttons button:hover {
+  background: linear-gradient(45deg, #addb71, #b9d848);
+}
+.admin-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.admin-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-container th,
+.admin-container td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.admin-container th {
+  background-color: #f0f0f0;
+}
+.action-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 4px;
+  transition: 0.2s;
+  width: 90px;
+}
+
+.action-btn.edit {
+  background: linear-gradient(45deg, #b6d37e, #cbd15a);
+  color: #fff;
+}
+
+.action-btn.edit:hover {
+  background: linear-gradient(45deg, #addb71, #b9d848);
+}
+
+.action-btn.delete {
+  background: linear-gradient(45deg, #f44336, #c62828);
+  color: #fff;
+}
+
+.action-btn.delete:hover {
+ background: linear-gradient(45deg, #f86161, #dd1a1a);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #b6d37e, #cbd15a);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+ background: linear-gradient(45deg, #addb71, #b9d848);
+}
+.revenue-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.revenue-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.revenue-container th,
+.revenue-container td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.revenue-container th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top:      5px;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #f0f0f0;
+}
+.site-footer {
+  background-color: #f8f8f8;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 10px;
+}
+
+.footer-column h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.social-icons img {
+  width: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+}

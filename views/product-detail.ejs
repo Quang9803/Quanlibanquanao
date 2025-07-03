@@ -60,15 +60,19 @@
           <label><input type="radio" name="size" value="L"> L</label>
           <label><input type="radio" name="size" value="XL"> XL</label>
         </div>
-
-        <button type="submit">Thêm vào giỏ hàng</button>
+        <div class="action-buttons">
+          <button type="submit" name="action" value="add" class="btn">Thêm vào giỏ hàng</button>
+        </div>
       </form>
 
       <!-- FORM mua ngay -->
       <form method="POST" action="/checkout-now">
         <input type="hidden" name="productId" value="<%= product.id %>">
         <input type="hidden" name="quantity" value="1">
-        <button type="submit">Mua ngay</button>
+        <div class="action-buttons">
+          <button type="submit" name="action" value="buy" class="btn buy">Mua ngay</button>
+        </div>
+
       </form>
     </div>
 
@@ -77,5 +81,7 @@
       <p><%= product.description || "Không có mô tả." %></p>
     </div>
   </div>
+  <%- include('partials/footer') %>
+
 </body>
 </html>

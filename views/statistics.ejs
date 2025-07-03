@@ -8,9 +8,9 @@
 <body>
     <%- include('partials/header') %>
     <h1>Thống kê doanh thu</h1>
-    <a href="/admin/products">← Quay về quản lý sản phẩm</a> 
+    <a href="/admin/products" class="back-btn">← Quay về quản lý sản phẩm</a>
 
-
+<div class="revenue-container">
     <h2>Tổng quan</h2>
     <p>Tổng số đơn hàng: <strong><%= totalOrders %></strong></p>
     <p>Tổng doanh thu: <strong><%= totalRevenue.toLocaleString() %> VNĐ</strong></p>
@@ -49,5 +49,6 @@
             </div>
         <% }) %>
     <% } %>
+</div>
 </body>
 </html>
