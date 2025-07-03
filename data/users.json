@@ -50,6 +50,22 @@
         "category": "Nam",
         "quantity": 1,
         "size": "S"
+      },
+      {
+        "id": 1752000000013,
+        "name": "Quần short bé gái",
+        "price": 85000,
+        "description": "Quần short jeans co giãn, bé gái năng động.",
+        "image": "/images/product_1750960822551.png",
+        "sizes": {
+          "S": 10,
+          "M": 8,
+          "L": 5,
+          "XL": 0
+        },
+        "category": "Trẻ em",
+        "quantity": 1,
+        "size": "M"
       }
     ]
   },
