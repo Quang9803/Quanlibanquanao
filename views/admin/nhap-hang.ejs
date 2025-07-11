@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập hàng</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Nhập thêm hàng cho: <%= product.name %></h1>
+    <a href="/admin/products">⬅ Quay lại danh sách sản phẩm</a>
+
+    <form method="POST" action="/admin/products/import/<%= product.id %>">
+        <label>S:</label>
+        <input type="number" name="sizeS" min="0" value="0"><br>
+
+        <label>M:</label>
+        <input type="number" name="sizeM" min="0" value="0"><br>
+
+        <label>L:</label>
+        <input type="number" name="sizeL" min="0" value="0"><br>
+
+        <label>XL:</label>
+        <input type="number" name="sizeXL" min="0" value="0"><br><br>
+
+        <button type="submit">Nhập hàng</button>
+    </form>
+</body>
+</html>

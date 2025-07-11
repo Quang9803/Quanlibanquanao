@@ -5,6 +5,8 @@ const usersFile = path.join(__dirname, '../data/users.json');
 const productsFile = path.join(__dirname, '../data/products.json');
 const ordersFile = path.join(__dirname, '../data/orders.json');
 
+const productFilePath = path.join(__dirname, '../data/products.json');
+
 function readJSON(filePath) {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
@@ -109,6 +111,7 @@ exports.getStatistics = (req, res) => {
     const products = readJSON(productsFile);
 
     let totalRevenue = 0;
+    const taxRate = 0.08;
 
     const detailedOrders = orders.map(order => {
         const user = users.find(u => u.id === order.userId);
@@ -117,17 +120,19 @@ exports.getStatistics = (req, res) => {
         let subtotal = 0;
         items = items.map(item => {
             const product = products.find(p => p.id === item.id);
-            const total = item.price * item.quantity;
-            subtotal += total;
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
             return {
                 name: product?.name || 'Không tìm thấy',
                 size: item.size,
                 quantity: item.quantity,
                 price: item.price,
-                total
+                total: itemTotal
             };
         });
 
+        const tax = subtotal * taxRate;
+        const grandTotal = subtotal + tax;
         totalRevenue += subtotal;
 
         return {
@@ -135,7 +140,9 @@ exports.getStatistics = (req, res) => {
             user: user?.username || 'Không rõ',
             date: new Date(order.date).toLocaleString(),
             items,
-            subtotal
+            subtotal,
+            tax,
+            grandTotal
         };
     });
 
@@ -145,4 +152,41 @@ exports.getStatistics = (req, res) => {
         totalOrders: detailedOrders.length,
         totalRevenue
     });
+};
+
+//from nhập hàng
+exports.getImportPage = (req, res) => {
+    const products = readJSON(productsFile);
+    const id = req.params.id;
+    const product = products.find(p => String(p.id) === id);
+
+    if (!product) return res.status(404).send("Sản phẩm không tồn tại");
+
+    res.render('admin/nhap-hang', { product });
+};
+
+exports.handleImportProduct = (req, res) => {
+    const products = readJSON(productsFile);
+    const id = req.params.id;
+    const index = products.findIndex(p => String(p.id) === id);
+
+    if (index === -1) return res.status(404).send("Không tìm thấy sản phẩm");
+
+    const addedSizes = {
+        S: parseInt(req.body.sizeS || 0),
+        M: parseInt(req.body.sizeM || 0),
+        L: parseInt(req.body.sizeL || 0),
+        XL: parseInt(req.body.sizeXL || 0),
+    };
+
+    const currentSizes = products[index].sizes || { S: 0, M: 0, L: 0, XL: 0 };
+    products[index].sizes = {
+        S: (parseInt(currentSizes.S) || 0) + addedSizes.S,
+        M: (parseInt(currentSizes.M) || 0) + addedSizes.M,
+        L: (parseInt(currentSizes.L) || 0) + addedSizes.L,
+        XL: (parseInt(currentSizes.XL) || 0) + addedSizes.XL,
+    };
+
+    writeJSON(productsFile, products);
+    res.redirect('/admin');
 };

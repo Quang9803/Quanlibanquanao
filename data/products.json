@@ -7,10 +7,10 @@
     "category": "Nam",
     "image": "/images/product_1751569802214.jpg",
     "sizes": {
-      "S": 1,
-      "M": 1,
-      "L": 1,
-      "XL": 1
+      "S": 0,
+      "M": 0,
+      "L": 32,
+      "XL": 0
     }
   },
   {
@@ -427,10 +427,10 @@
     "category": "Nữ",
     "image": "/images/product_1751572108864.avif",
     "sizes": {
-      "S": 1,
-      "M": 1,
-      "L": 1,
-      "XL": 1
+      "S": 0,
+      "M": 0,
+      "L": 0,
+      "XL": 0
     }
   },
   {

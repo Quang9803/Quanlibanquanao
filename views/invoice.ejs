@@ -31,7 +31,12 @@
         <% }) %>
     </table>
 
-    <h3>Tổng cộng: <%= order.totalAmount.toLocaleString() %> VNĐ</h3>
+    <div style="text-align: right; margin-top: 20px;">
+    <h3>Tạm tính: <%= order.totalAmount.toLocaleString() %> VNĐ</h3>
+    <h3>Thuế (8%): <%= order.tax.toLocaleString() %> VNĐ</h3>
+    <h2>Tổng cộng: <%= order.grandTotal.toLocaleString() %> VNĐ</h2>
+</div>
+
     <div class="invoice-buttons">
     <button onclick="window.print()">In hóa đơn</button>
     <a href="/products"><button>Tiếp tục mua sắm</button></a>

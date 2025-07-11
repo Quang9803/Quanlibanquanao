@@ -476,3 +476,11 @@ body {
   font-size: 13px;
   color: #777;
 }
+.action-btn.import {
+  background: linear-gradient(45deg, #4CAF50, #2e7d32);
+  color: #fff;
+}
+
+.action-btn.import:hover {
+  background: linear-gradient(45deg, #66bb6a, #388e3c);
+}

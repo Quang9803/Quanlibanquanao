@@ -132,8 +132,19 @@ exports.addToCart = (req, res) => {
 exports.viewCart = (req, res) => {
     const cart = req.session.cart || [];
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    res.render('cart', { cart, total, message: null });
+    const taxRate = 0.08;
+    const taxAmount = total * taxRate;
+    const grandTotal = total + taxAmount;
+
+    res.render('cart', {
+        cart,
+        total,
+        taxAmount,
+        grandTotal,
+        message: null
+    });
 };
+
 
 // Xóa sản phẩm khỏi giỏ
 exports.removeFromCart = (req, res) => {
@@ -179,7 +190,12 @@ exports.checkoutCart = (req, res) => {
     const cart = req.session.cart || [];
     if (cart.length === 0) return res.redirect('/cart');
 
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); 
+    // Tính toán
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const taxRate = 0.08;
+    const taxAmount = total * taxRate;
+    const grandTotal = total + taxAmount;
+
     const orders = readJSON(ordersFile);
 
     const newOrder = {
@@ -188,12 +204,15 @@ exports.checkoutCart = (req, res) => {
         username: req.session.user.username,
         items: cart,
         totalAmount: total,
+        tax: taxAmount,
+        grandTotal,
         date: new Date().toISOString()
     };
 
     orders.push(newOrder);
     writeJSON(ordersFile, orders);
 
+    // Xoá giỏ hàng người dùng
     const users = readJSON(usersFile);
     const user = users.find(u => u.id === req.session.user.id);
     if (user) {
@@ -202,11 +221,14 @@ exports.checkoutCart = (req, res) => {
     }
 
     req.session.cart = [];
+
+    // Gửi thông tin qua giao diện invoice (có cả thuế)
     res.render('invoice', {
-    order: newOrder,
-    user: req.session.user 
-});
+        order: newOrder,
+        user: req.session.user
+    });
 };
+
 
 // Trang đăng ký (không dùng mã hóa)
 exports.getRegisterPage = (req, res) => {
@@ -241,7 +263,8 @@ exports.searchProducts = (req, res) => {
 
     const results = products.filter(p =>
         p.name.toLowerCase().includes(query) ||
-        p.description.toLowerCase().includes(query)
+        p.description.toLowerCase().includes(query) ||
+        p.category.toLowerCase().includes(query)
     );
 
     res.render('products-list', {

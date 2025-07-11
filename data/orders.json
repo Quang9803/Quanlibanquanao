@@ -864,5 +864,232 @@
     ],
     "totalAmount": 1995000,
     "date": "2025-07-03T19:59:34.335Z"
+  },
+  {
+    "id": 1751591175115,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751572405524,
+        "name": "VÁY HAI DÂY COTTON POPLIN",
+        "price": 249000,
+        "description": "Váy chữ A bằng cotton poplin mỏng nhẹ có hình in toàn bộ. Cổ vuông, dây vai rút vải và đường may nhún vải ở trên eo.",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572405516.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 10,
+        "size": "L"
+      }
+    ],
+    "totalAmount": 2490000,
+    "date": "2025-07-04T01:06:15.115Z"
+  },
+  {
+    "id": 1751630943643,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570757275,
+        "name": "ÁO SƠ MI OXFORD REGULAR FIT",
+        "price": 499000,
+        "description": "Áo sơ mi bằng cotton Oxford có cổ áo cài khuy, nẹp khuy kiểu truyền thống, cầu vai phía sau và một túi ngực mở. Tay dài với măng sét cài khuy và nẹp tay áo có khuy nối. Vạt hơi tròn. Dáng vừa để mặc thoải mái và tạo dáng cổ điển.",
+        "category": "Nam",
+        "image": "/images/product_1751570757272.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 499000,
+    "date": "2025-07-04T12:09:03.643Z"
+  },
+  {
+    "id": 1752132415762,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751572590236,
+        "name": "ÁO THUN IN HÌNH",
+        "price": 249000,
+        "description": "Áo thun dáng rộng bằng cotton jersey mềm có hoạ tiết in. Viền gân nổi quanh cổ và vai ráp trễ nhiều.",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572590233.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "M"
+      }
+    ],
+    "totalAmount": 249000,
+    "date": "2025-07-10T07:26:55.762Z"
+  },
+  {
+    "id": 1752135269372,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751572405524,
+        "name": "VÁY HAI DÂY COTTON POPLIN",
+        "price": 249000,
+        "description": "Váy chữ A bằng cotton poplin mỏng nhẹ có hình in toàn bộ. Cổ vuông, dây vai rút vải và đường may nhún vải ở trên eo.",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572405516.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 100,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 24900000,
+    "date": "2025-07-10T08:14:29.372Z"
+  },
+  {
+    "id": 1752139609665,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571319359,
+        "name": "QUẦN SHORT LINEN PHA REGULAR FIT",
+        "price": 699000,
+        "description": "Quần short bằng cotton mỏng nhẹ và linen dệt thoi có cạp chun bọc có dây rút, nẹp khoá kéo cài khuy, túi hai bên và một túi sau mổ viền. Dáng vừa để mặc thoải mái và tạo dáng cổ điển. Cotton pha linen kết hợp sự mềm mại của cotton với độ bền của linen, tạo ra một loại vải đẹp, có vân nổi, thoáng khí và rủ mềm hoàn hảo.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751571319356.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 699000,
+    "date": "2025-07-10T09:26:49.665Z"
+  },
+  {
+    "id": 1752140023161,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571678127,
+        "name": "ÁO BƠI MỘT MẢNH ĐỆM NGỰC",
+        "price": 749000,
+        "description": "Áo bơi một mảnh lót toàn bộ với dây vai to bản, cổ chữ U và lưng cắt sâu. Cúp ngực với miếng đệm có thể tháo rời giúp tạo dáng ngực và đỡ ngực tốt. Hông khoét cao và phía sau che nửa mông.",
+        "category": "Nữ",
+        "image": "/images/product_1751571678117.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 749000,
+    "date": "2025-07-10T09:33:43.161Z"
+  },
+  {
+    "id": 1752140076615,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571319359,
+        "name": "QUẦN SHORT LINEN PHA REGULAR FIT",
+        "price": 699000,
+        "description": "Quần short bằng cotton mỏng nhẹ và linen dệt thoi có cạp chun bọc có dây rút, nẹp khoá kéo cài khuy, túi hai bên và một túi sau mổ viền. Dáng vừa để mặc thoải mái và tạo dáng cổ điển. Cotton pha linen kết hợp sự mềm mại của cotton với độ bền của linen, tạo ra một loại vải đẹp, có vân nổi, thoáng khí và rủ mềm hoàn hảo.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751571319356.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 14,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 9786000,
+    "date": "2025-07-10T09:34:36.615Z"
+  },
+  {
+    "id": 1752140144331,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751572545479,
+        "name": "ÁO NỈ IN HÌNH",
+        "price": 299000,
+        "description": "Áo bằng vải nỉ in hình làm từ cotton pha với mặt trái chải xù mềm. Cổ tròn, viền gân nổi, vai ráp trễ và tay dài. Cổ tay và gấu bo gân nổi.",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572545475.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 299000,
+    "date": "2025-07-10T09:35:44.331Z"
+  },
+  {
+    "id": 1752140469471,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570699796,
+        "name": "ÁO SƠ MI CHỐNG NHĂN REGULAR FIT",
+        "price": 499999,
+        "description": "Áo sơ mi bằng vải dệt thoi có bề mặt chống nhăn. Cổ bẻ, nẹp khuy liền, cầu vai phía sau và vạt tròn. Tay dài với măng sét cài khuy điều chỉnh và nẹp tay áo có khuy nối. Dáng vừa để mặc thoải mái và tạo dáng cổ điển.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751570699793.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 499999,
+    "tax": 39999.92,
+    "grandTotal": 539998.92,
+    "date": "2025-07-10T09:41:09.471Z"
   }
 ]

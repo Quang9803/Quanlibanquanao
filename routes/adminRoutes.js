@@ -21,12 +21,20 @@ router.get('/products/add', adminController.getAddProductPage);
 router.post('/products/add', upload.single('image'), adminController.handleAddProduct);
 // Xóa sản phẩm
 router.post('/products/delete/:id', adminController.deleteProduct);
-// sửa sản phẩm
+
+// Sửa sản phẩm
 router.get('/products/edit/:id', adminController.getEditProductPage);
 router.post('/products/edit/:id', upload.single('image'), adminController.handleEditProduct);
+
+// Nhập hàng theo sản phẩm (phải đặt trước module.exports!)
+router.get('/products/import/:id', adminController.getImportPage);
+router.post('/products/import/:id', adminController.handleImportProduct);
 
 // Thống kê doanh thu
 router.get('/statistics', adminController.getStatistics);
 
+// Trang nhập hàng tổng quát (nếu có)
+router.get('/import', adminController.getImportPage);
+router.post('/import', adminController.handleImportProduct);
 
 module.exports = router;
