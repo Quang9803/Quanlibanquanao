@@ -484,3 +484,214 @@ body {
 .action-btn.import:hover {
   background: linear-gradient(45deg, #66bb6a, #388e3c);
 }
+.account-dropdown {
+  position: relative;
+}
+
+.account-menu {
+  min-width: 180px;
+  right: 0;
+}
+
+.account-menu a {
+  padding: 10px 14px;
+  display: block;
+  text-align: left;
+  color: #333;
+}
+
+.account-menu a:hover {
+  background-color: #f0f0f0;
+}
+.account-container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.account-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.account-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.account-container input[type="text"],
+.account-container input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.account-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.account-container button:hover {
+    background-color: #45a049;
+}
+
+.nhap-hang-container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 50px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nhap-hang-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.nhap-hang-container h2 span {
+    color: #000000;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.import-form .form-group {
+    margin-bottom: 15px;
+}
+
+.import-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+.import-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.import-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.import-form button:hover {
+    background-color: #218838;
+}
+
+.edit-product-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.edit-product-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.edit-form .form-group {
+    margin-bottom: 15px;
+}
+
+.edit-form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #444;
+    font-weight: 500;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="number"],
+.edit-form textarea,
+.edit-form select,
+.edit-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.edit-form textarea {
+    resize: vertical;
+}
+
+.edit-form .size-inputs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.size-inputs label {
+    flex: 1;
+    font-weight: 400;
+}
+
+.edit-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-form button:hover {
+    background-color: #218838;
+}

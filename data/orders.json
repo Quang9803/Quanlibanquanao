@@ -1091,5 +1091,102 @@
     "tax": 39999.92,
     "grandTotal": 539998.92,
     "date": "2025-07-10T09:41:09.471Z"
+  },
+  {
+    "id": 1752769731943,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571358724,
+        "name": "QUẦN SHORT NỈ REGULAR FIT",
+        "price": 249000,
+        "description": "Quần short bằng vải nỉ nhẹ làm từ cotton pha với cạp co giãn có dây rút, túi hai bên và một túi sau mở. Dáng vừa để mặc thoải mái và tạo dáng cổ điển.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751571358722.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "M"
+      }
+    ],
+    "totalAmount": 249000,
+    "tax": 19920,
+    "grandTotal": 268920,
+    "date": "2025-07-17T16:28:51.943Z"
+  },
+  {
+    "id": 1752769774340,
+    "userId": 1,
+    "username": "admin",
+    "items": [
+      {
+        "id": 1750958694670,
+        "name": "quần",
+        "price": 120000,
+        "description": "hehehehe",
+        "image": "/images/product_1750958694658.jpeg",
+        "category": "Nam",
+        "sizes": {
+          "S": "120",
+          "M": "12",
+          "L": "1",
+          "XL": "0120"
+        },
+        "quantity": 1,
+        "size": "S"
+      },
+      {
+        "id": 1751572634152,
+        "name": "ÁO THUN DÁNG THỤNG IN HÌNH",
+        "price": 299000,
+        "description": "Áo thun dáng thụng bằng cotton jersey mềm có hoạ tiết in ở thân trước. Cổ tròn, viền gân nổi và vai ráp trễ.",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572634148.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "quantity": 1,
+        "size": "S"
+      }
+    ],
+    "totalAmount": 419000,
+    "tax": 33520,
+    "grandTotal": 452520,
+    "date": "2025-07-17T16:29:34.340Z"
+  },
+  {
+    "id": 1752773052232,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751569753938,
+        "name": "ÁO POLO COOLMAX® SLIM FIT",
+        "price": 399000,
+        "description": "Áo polo bằng thun cá sấu nhẹ làm từ cotton pha, có cổ, nẹp khuy và tay ngắn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn. Áo kết hợp vải tính năng COOLMAX® - một dạng sợi polyester độc đáo, mềm mại, thoải mái và nhanh khô giúp hút ẩm và điều chỉnh nhiệt độ hiệu quả.",
+        "category": "Nam",
+        "image": "/images/product_1751570243169.avif",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "size": "S",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 399000,
+    "tax": 31920,
+    "grandTotal": 430920,
+    "date": "2025-07-17T17:24:12.232Z"
   }
 ]

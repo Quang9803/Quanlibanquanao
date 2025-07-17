@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-// Đường dẫn đến file dữ liệu
+// Đường dẫn tới các file dữ liệu
 const usersFile = path.join(__dirname, '../data/users.json');
 const productsFile = path.join(__dirname, '../data/products.json');
 const ordersFile = path.join(__dirname, '../data/orders.json');
 
-// Đọc và ghi JSON
+// Đọc/ghi JSON
 function readJSON(filePath) {
     const data = fs.readFileSync(filePath, 'utf8').trim();
     return data ? JSON.parse(data) : [];
@@ -21,12 +21,11 @@ exports.getHomePage = (req, res) => {
     res.redirect('/products');
 };
 
-// Trang đăng nhập
+// Đăng nhập
 exports.getLoginPage = (req, res) => {
-    res.render('login', { error: null });
+    res.render('login', { error: null, user: null });
 };
 
-// Xử lý đăng nhập (không mã hóa)
 exports.handleLogin = (req, res) => {
     const { username, password } = req.body;
     const users = readJSON(usersFile);
@@ -38,13 +37,13 @@ exports.handleLogin = (req, res) => {
         return res.redirect(user.role === 'admin' ? '/admin' : '/products');
     }
 
-    return res.render('login', { error: 'Sai tên đăng nhập hoặc mật khẩu' });
+    res.render('login', { error: 'Sai tên đăng nhập hoặc mật khẩu', user: null });
 };
 
-// Xử lý đăng xuất (lưu giỏ vào file)
+// Đăng xuất
 exports.logout = (req, res) => {
     const users = readJSON(usersFile);
-    const user = users.find(u => u.id === req.session.user.id);
+    const user = users.find(u => u.id === req.session.user?.id);
 
     if (user) {
         user.cart = req.session.cart || [];
@@ -56,7 +55,7 @@ exports.logout = (req, res) => {
     });
 };
 
-// Trang sản phẩm
+// Hiển thị trang sản phẩm
 exports.getProductsPage = (req, res) => {
     const products = readJSON(productsFile);
 
@@ -66,25 +65,22 @@ exports.getProductsPage = (req, res) => {
     const kidsProducts = products.filter(p => p.category === 'Trẻ em').slice(0, 8);
 
     res.render('products-home', {
-        user: req.session.user,
         featuredProducts,
         maleProducts,
         femaleProducts,
-        kidsProducts
+        kidsProducts,
+        user: req.session.user
     });
 };
 
-// Xem sản phẩm theo danh mục
+// Xem theo danh mục
 exports.getProductsByCategory = (req, res) => {
     const category = decodeURIComponent(req.params.category);
     const products = readJSON(productsFile);
-    let filtered = [];
 
-    if (category === 'Sản phẩm mới') {
-        filtered = [...products].sort(() => 0.5 - Math.random()).slice(0, 20);
-    } else {
-        filtered = products.filter(p => p.category === category);
-    }
+    const filtered = category === 'Sản phẩm mới'
+        ? [...products].sort(() => 0.5 - Math.random()).slice(0, 20)
+        : products.filter(p => p.category === category);
 
     res.render('products-list', {
         title: `Danh mục: ${category}`,
@@ -94,13 +90,17 @@ exports.getProductsByCategory = (req, res) => {
     });
 };
 
-// Trang chi tiết sản phẩm
+// Chi tiết sản phẩm
 exports.getProductDetail = (req, res) => {
     const { id } = req.params;
     const products = readJSON(productsFile);
     const product = products.find(p => p.id == id);
     if (!product) return res.status(404).send('Không tìm thấy sản phẩm');
-    res.render('product-detail', { product });
+
+    res.render('product-detail', {
+        product,
+        user: req.session.user
+    });
 };
 
 // Thêm vào giỏ hàng
@@ -108,54 +108,49 @@ exports.addToCart = (req, res) => {
     const { productId, size } = req.body;
     const products = readJSON(productsFile);
     const product = products.find(p => p.id == productId);
-
     if (!product) return res.redirect('/products');
+
     if (!req.session.cart) req.session.cart = [];
 
-    const cart = req.session.cart;
-    const existing = cart.find(p => p.id == product.id && p.size == size);
-
+    const existing = req.session.cart.find(p => p.id == product.id && p.size == size);
     if (existing) {
         existing.quantity += 1;
     } else {
-        cart.push({
+        req.session.cart.push({
             ...product,
-            quantity: 1,
-            size: size || "M"
+            size: size || 'M',
+            quantity: 1
         });
     }
 
     res.redirect('/cart');
 };
 
-// Xem giỏ hàng
+// Hiển thị giỏ hàng
 exports.viewCart = (req, res) => {
     const cart = req.session.cart || [];
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const taxRate = 0.08;
-    const taxAmount = total * taxRate;
-    const grandTotal = total + taxAmount;
+    const tax = total * 0.08;
+    const grandTotal = total + tax;
 
     res.render('cart', {
         cart,
         total,
-        taxAmount,
+        taxAmount: tax,
         grandTotal,
-        message: null
+        message: null,
+        user: req.session.user
     });
 };
-
 
 // Xóa sản phẩm khỏi giỏ
 exports.removeFromCart = (req, res) => {
     const { id, size } = req.params;
-    if (req.session.cart) {
-        req.session.cart = req.session.cart.filter(item => !(item.id == id && item.size == size));
-    }
+    req.session.cart = req.session.cart?.filter(item => !(item.id == id && item.size == size)) || [];
     res.redirect('/cart');
 };
 
-// Tăng/giảm số lượng trong giỏ
+// Tăng/giảm số lượng
 exports.updateCartQuantity = (req, res) => {
     const { id, size, action } = req.params;
     const cart = req.session.cart || [];
@@ -163,38 +158,20 @@ exports.updateCartQuantity = (req, res) => {
     const item = cart.find(p => p.id == id && p.size == size);
     if (item) {
         if (action === 'increase') item.quantity += 1;
-        else if (action === 'decrease') item.quantity = Math.max(1, item.quantity - 1);
+        if (action === 'decrease') item.quantity = Math.max(1, item.quantity - 1);
     }
 
     res.redirect('/cart');
 };
 
-// Đặt hàng đơn lẻ
-exports.placeOrder = (req, res) => {
-    const { productId, quantity } = req.body;
-    const orders = readJSON(ordersFile);
-    const newOrder = {
-        id: Date.now(),
-        user: req.session.user.username,
-        productId,
-        quantity: parseInt(quantity),
-        date: new Date().toISOString()
-    };
-    orders.push(newOrder);
-    writeJSON(ordersFile, orders);
-    res.redirect('/products');
-};
-
-// Đặt hàng toàn bộ giỏ hàng
+// Thanh toán toàn bộ giỏ hàng
 exports.checkoutCart = (req, res) => {
     const cart = req.session.cart || [];
-    if (cart.length === 0) return res.redirect('/cart');
+    if (!cart.length) return res.redirect('/cart');
 
-    // Tính toán
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const taxRate = 0.08;
-    const taxAmount = total * taxRate;
-    const grandTotal = total + taxAmount;
+    const tax = total * 0.08;
+    const grandTotal = total + tax;
 
     const orders = readJSON(ordersFile);
 
@@ -204,7 +181,7 @@ exports.checkoutCart = (req, res) => {
         username: req.session.user.username,
         items: cart,
         totalAmount: total,
-        tax: taxAmount,
+        tax,
         grandTotal,
         date: new Date().toISOString()
     };
@@ -212,36 +189,34 @@ exports.checkoutCart = (req, res) => {
     orders.push(newOrder);
     writeJSON(ordersFile, orders);
 
-    // Xoá giỏ hàng người dùng
+    // Clear giỏ hàng user
     const users = readJSON(usersFile);
-    const user = users.find(u => u.id === req.session.user.id);
-    if (user) {
-        user.cart = [];
+    const index = users.findIndex(u => u.id === req.session.user.id);
+    if (index !== -1) {
+        users[index].cart = [];
         writeJSON(usersFile, users);
     }
 
     req.session.cart = [];
 
-    // Gửi thông tin qua giao diện invoice (có cả thuế)
     res.render('invoice', {
         order: newOrder,
         user: req.session.user
     });
 };
 
-
-// Trang đăng ký (không dùng mã hóa)
+// Đăng ký
 exports.getRegisterPage = (req, res) => {
-    res.render('register', { error: null });
+    res.render('register', { error: null, user: null });
 };
 
 exports.handleRegister = (req, res) => {
     const { username, password } = req.body;
     const users = readJSON(usersFile);
+    const existing = users.find(u => u.username === username);
 
-    const existingUser = users.find(u => u.username === username);
-    if (existingUser) {
-        return res.render('register', { error: 'Tên đăng nhập đã tồn tại' });
+    if (existing) {
+        return res.render('register', { error: 'Tên đăng nhập đã tồn tại', user: null });
     }
 
     const newUser = {
@@ -249,18 +224,21 @@ exports.handleRegister = (req, res) => {
         username,
         password,
         role: 'user',
-        cart: []
+        cart: [],
+        name: '',
+        email: '',
+        address: ''
     };
 
     users.push(newUser);
     writeJSON(usersFile, users);
     res.redirect('/login');
 };
-//hàm tìm kiếm
-exports.searchProducts = (req, res) => {
-    const query = req.query.q.toLowerCase();
-    const products = readJSON(productsFile);
 
+// Tìm kiếm sản phẩm
+exports.searchProducts = (req, res) => {
+    const query = req.query.q?.toLowerCase() || '';
+    const products = readJSON(productsFile);
     const results = products.filter(p =>
         p.name.toLowerCase().includes(query) ||
         p.description.toLowerCase().includes(query) ||
@@ -273,4 +251,36 @@ exports.searchProducts = (req, res) => {
         products: results,
         user: req.session.user
     });
+};
+
+// Tài khoản người dùng
+exports.getAccountPage = (req, res) => {
+    const userId = req.session.user?.id;
+    if (!userId) return res.redirect('/login');
+
+    const users = readJSON(usersFile);
+    const user = users.find(u => u.id === userId);
+    if (!user) return res.status(404).send('Không tìm thấy người dùng');
+
+    res.render('account', { user });
+};
+
+exports.updateAccountInfo = (req, res) => {
+    const userId = req.session.user?.id;
+    if (!userId) return res.redirect('/login');
+
+    const { name, email, address } = req.body;
+    const users = readJSON(usersFile);
+    const index = users.findIndex(u => u.id === userId);
+
+    if (index === -1) return res.status(404).send('Không tìm thấy người dùng');
+
+    users[index].name = name;
+    users[index].email = email;
+    users[index].address = address;
+
+    writeJSON(usersFile, users);
+    req.session.user = users[index];
+
+    res.redirect('/account');
 };

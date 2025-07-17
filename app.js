@@ -23,12 +23,17 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// Public folder cho css/image tĩnh
+// Phục vụ file tĩnh (CSS, hình ảnh, JS) từ thư mục "public"
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', userRoutes);
 app.use('/admin', adminRoutes);
+
+// Trang không tồn tại (404)
+app.use((req, res) => {
+    res.status(404).render('404', { title: 'Không tìm thấy trang' });
+});
 
 // Start server
 app.listen(PORT, () => {

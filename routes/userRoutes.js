@@ -1,24 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
-router.get('/search', userController.searchProducts);
 const authMiddleware = require('../middlewares/authMiddleware');
 
+// Trang chủ => Chuyển hướng đến trang sản phẩm
+router.get('/', (req, res) => res.redirect('/products'));
 
-
-// Trang chủ
-router.get('/', userController.getHomePage);
-
-// Đăng nhập / Đăng ký / Đăng xuất
+// Trang đăng nhập / đăng ký / đăng xuất
 router.get('/login', userController.getLoginPage);
 router.post('/login', userController.handleLogin);
 router.get('/logout', userController.logout);
 router.get('/register', userController.getRegisterPage);
 router.post('/register', userController.handleRegister);
 
+// Tìm kiếm sản phẩm
+router.get('/search', userController.searchProducts);
+
 // Danh sách sản phẩm & chi tiết sản phẩm
 router.get('/products', authMiddleware.requireLogin, userController.getProductsPage);
-router.get('/products/:id', userController.getProductDetail);
+router.get('/products/:id', authMiddleware.requireLogin, userController.getProductDetail);
+router.get('/products/category/:category', authMiddleware.requireLogin, userController.getProductsByCategory);
 
 // Giỏ hàng
 router.post('/cart/add', authMiddleware.requireLogin, userController.addToCart);
@@ -28,12 +29,10 @@ router.get('/cart/update/:id/:size/:action', authMiddleware.requireLogin, userCo
 router.post('/cart/checkout', authMiddleware.requireLogin, userController.checkoutCart);
 
 // Đặt hàng (đơn lẻ)
-router.post('/order', authMiddleware.requireLogin, userController.placeOrder);
-// Trang chủ => Đưa về trang sản phẩm
-router.get('/', authMiddleware.requireLogin, userController.getProductsPage);
-//Hiển thị tất cả sp
-router.get('/products/category/:category', userController.getProductsByCategory);
+//router.post('/order', authMiddleware.requireLogin, userController.placeOrder);
 
+// Trang tài khoản cá nhân
+router.get('/account', authMiddleware.requireLogin, userController.getAccountPage);
+router.post('/account', authMiddleware.requireLogin, userController.updateAccountInfo);
 
-// Xuất router
 module.exports = router;
