@@ -66,14 +66,13 @@
       </form>
 
       <!-- FORM mua ngay -->
-      <form method="POST" action="/checkout-now">
-        <input type="hidden" name="productId" value="<%= product.id %>">
-        <input type="hidden" name="quantity" value="1">
-        <div class="action-buttons">
-          <button type="submit" name="action" value="buy" class="btn buy">Mua ngay</button>
-        </div>
+     <form method="POST" action="/cart/add">
+  <input type="hidden" name="productId" value="<%= product.id %>">
+  <input type="hidden" name="quantity" value="1">
+  <input type="hidden" name="size" value="M"> <!-- hoặc để người dùng chọn như bên trên -->
+  <button type="submit" name="action" value="buy" class="btn buy">Mua ngay</button>
+</form>
 
-      </form>
     </div>
 
     <div class="description">

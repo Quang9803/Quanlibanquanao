@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý người dùng</title>
+  <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+  <div class="admin-container">
+    <h1>Quản lý người dùng</h1>
+    <a href="/admin" class="btn-back"> Quay lại trang admin</a>
+    <% if (users.length === 0) { %>
+      <p class="no-users">Không có người dùng nào.</p>
+    <% } else { %>
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>Mật khẩu</th>
+            <th>Địa chỉ</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.password %></td>
+              <td><%= user.address %></td>
+              <td>
+                <form method="POST" action="/admin/users/delete/<%= user.id %>" onsubmit="return confirm('Bạn có chắc muốn xóa người dùng này không?');">
+                  <button type="submit" class="btn-delete">Xóa</button>
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } %>
+
+    
+  </div>
+</body>
+</html>

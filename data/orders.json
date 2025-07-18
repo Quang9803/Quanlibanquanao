@@ -1188,5 +1188,48 @@
     "tax": 31920,
     "grandTotal": 430920,
     "date": "2025-07-17T17:24:12.232Z"
+  },
+  {
+    "id": 1752796961363,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571719628,
+        "name": "ÁO BƠI MỘT MẢNH QUÂY NGANG CÓ ĐỆM NGỰC",
+        "price": 899000,
+        "description": "Áo bơi một mảnh quây, lót toàn bộ có các mảng khoét hở và cài khoá kim loại trang trí ở một bên. Cúp ngực có miếng đệm có thể tháo rời giúp tạo dáng ngực và đỡ ngực tốt cùng viền silicon ẩn bên trên để giữ cố định. Hông khoét cao và phía sau che vừa.\r\n",
+        "category": "Nữ",
+        "image": "/images/product_1751571719622.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "quantity": 1
+      },
+      {
+        "id": 1751571719628,
+        "name": "ÁO BƠI MỘT MẢNH QUÂY NGANG CÓ ĐỆM NGỰC",
+        "price": 899000,
+        "description": "Áo bơi một mảnh quây, lót toàn bộ có các mảng khoét hở và cài khoá kim loại trang trí ở một bên. Cúp ngực có miếng đệm có thể tháo rời giúp tạo dáng ngực và đỡ ngực tốt cùng viền silicon ẩn bên trên để giữ cố định. Hông khoét cao và phía sau che vừa.\r\n",
+        "category": "Nữ",
+        "image": "/images/product_1751571719622.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "S",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 1798000,
+    "tax": 143840,
+    "grandTotal": 1941840,
+    "date": "2025-07-18T00:02:41.363Z"
   }
 ]

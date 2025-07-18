@@ -190,3 +190,19 @@ exports.handleImportProduct = (req, res) => {
     writeJSON(productsFile, products);
     res.redirect('/admin');
 };
+// Hiển thị danh sách người dùng
+exports.getUserList = (req, res) => {
+    const users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
+    res.render('admin-user-list', { users });
+};
+
+// Xóa người dùng theo ID
+exports.deleteUser = (req, res) => {
+    const users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
+    const userId = parseInt(req.params.id, 10); // Ép kiểu ID
+
+    const updatedUsers = users.filter(user => user.id !== userId);
+
+    fs.writeFileSync(usersFile, JSON.stringify(updatedUsers, null, 2), 'utf8');
+    res.redirect('/admin/users');
+};
