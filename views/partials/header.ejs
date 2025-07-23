@@ -1,0 +1,44 @@
+<header class="navbar">
+  <div class="navbar-left">
+    <a href="/">TL Store</a>
+  </div>
+
+<div class="navbar-center">
+    <form action="/search" method="get" class="navbar-search">
+      <input type="text" name="q" placeholder=" Tìm kiếm sản phẩm tại đây" value="<%= typeof q !== 'undefined' ? q : '' %>">
+    </form>
+  </div>
+
+  <div class="navbar-right">
+    <div class="nav-item dropdown">
+      <a href="/products" class="icon-link">
+  <img src="/images/icons/store-black.png" alt="Sản phẩm" class="icon-img">
+</a>
+      <div class="dropdown-content">
+        <a href="/products/category/<%= encodeURIComponent('Sản phẩm mới') %>">Sản phẩm mới</a>
+        <a href="/products/category/<%= encodeURIComponent('Nam') %>">Nam</a>
+        <a href="/products/category/<%= encodeURIComponent('Nữ') %>">Nữ</a>
+        <a href="/products/category/<%= encodeURIComponent('Trẻ em') %>">Trẻ em</a>
+      </div>
+    </div>
+
+   <a href="/cart" class="icon-link">
+  <img src="/images/icons/cart-black.png" alt="Giỏ hàng" class="icon-img">
+</a>
+
+
+    <% if (user) { %>
+      <div class="nav-item dropdown">
+        <a href="/login" class="icon-link">
+  <img src="/images/icons/login-black.png" alt="Đăng nhập" class="icon-img">
+</a>
+        <div class="dropdown-content">
+          <a href="/account">Tài khoản</a>
+          <a href="/logout">Đăng xuất</a>
+        </div>
+      </div>
+    <% } else { %>
+      <a href="/login" class="icon-link">🔑</a>
+    <% } %>
+  </div>
+</header>

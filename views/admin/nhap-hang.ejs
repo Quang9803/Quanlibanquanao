@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập hàng</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="nhap-hang-container">
+        <a class="back-link" href="/admin/products">⬅ Quay lại danh sách sản phẩm</a>
+        <h2>🛒 Nhập hàng cho sản phẩm: <span><%= product.name %></span></h2>
+        
+
+        <form method="POST" action="/admin/products/import/<%= product.id %>" class="import-form">
+            <div class="form-group">
+                <label for="sizeS">Size S:</label>
+                <input type="number" name="sizeS" id="sizeS" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeM">Size M:</label>
+                <input type="number" name="sizeM" id="sizeM" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeL">Size L:</label>
+                <input type="number" name="sizeL" id="sizeL" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeXL">Size XL:</label>
+                <input type="number" name="sizeXL" id="sizeXL" min="0" value="0">
+            </div>
+
+            <button type="submit"> Nhập hàng</button>
+        </form>
+    </div>
+</body>
+</html>

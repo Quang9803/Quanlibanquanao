@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa sản phẩm</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="edit-product-container">
+        <h2>🛠️ Sửa sản phẩm</h2>
+        <a class="back-link" href="/admin/products">⬅ Quay lại danh sách sản phẩm</a>
+
+        <form method="POST" action="/admin/products/edit/<%= product.id %>" enctype="multipart/form-data" class="edit-form">
+            <div class="form-group">
+                <label>Tên sản phẩm:</label>
+                <input type="text" name="name" value="<%= product.name %>" required>
+            </div>
+
+            <div class="form-group">
+                <label>Giá:</label>
+                <input type="number" name="price" value="<%= product.price %>" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mô tả:</label>
+                <textarea name="description" rows="3" required><%= product.description %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Danh mục:</label>
+                <select name="category" required>
+                    <option value="Nam" <%= product.category === 'Nam' ? 'selected' : '' %>>Nam</option>
+                    <option value="Nữ" <%= product.category === 'Nữ' ? 'selected' : '' %>>Nữ</option>
+                    <option value="Trẻ em" <%= product.category === 'Trẻ em' ? 'selected' : '' %>>Trẻ em</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Hình ảnh hiện tại:</label><br>
+                <% if (product.image) { %>
+                    <img src="<%= product.image %>" width="120"><br>
+                <% } else { %>
+                    Không có ảnh<br>
+                <% } %>
+            </div>
+
+            <div class="form-group">
+                <label>Chọn hình ảnh mới (nếu muốn thay):</label>
+                <input type="file" name="image" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label>Số lượng theo size:</label>
+                <div class="size-inputs">
+                    <label>S: <input type="number" name="sizes[S]" min="0" value="<%= product.sizes?.S || 0 %>"></label>
+                    <label>M: <input type="number" name="sizes[M]" min="0" value="<%= product.sizes?.M || 0 %>"></label>
+                    <label>L: <input type="number" name="sizes[L]" min="0" value="<%= product.sizes?.L || 0 %>"></label>
+                    <label>XL: <input type="number" name="sizes[XL]" min="0" value="<%= product.sizes?.XL || 0 %>"></label>
+                </div>
+            </div>
+
+            <button type="submit">Lưu thay đổi</button>
+        </form>
+    </div>
+</body>
+</html>

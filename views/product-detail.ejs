@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title><%= product.name %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="detail-wrapper">
+    <!-- Hình ảnh bên trái -->
+    <div class="detail-images">
+      <img src="<%= product.image || '/images/default.jpg' %>" alt="<%= product.name %>">
+    </div>
+
+    <!-- Thông tin bên phải -->
+    <div class="detail-info" style="margin-left: 40px;"> <!-- DỊCH QUA PHẢI -->
+      <h1 class="product-title"><%= product.name %></h1>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="productId" value="<%= product.id %>">
+
+        <!-- Chọn kích cỡ -->
+        <div class="product-sizes">
+          <span>Chọn kích cỡ:</span>
+          <div class="size-options">
+            <input type="radio" name="size" id="size-s" value="S">
+            <label for="size-s">S</label>
+
+            <input type="radio" name="size" id="size-m" value="M" checked>
+            <label for="size-m">M</label>
+
+            <input type="radio" name="size" id="size-l" value="L">
+            <label for="size-l">L</label>
+
+            <input type="radio" name="size" id="size-xl" value="XL">
+            <label for="size-xl">XL</label>
+          </div>
+        </div>
+
+        <!-- Chọn màu sắc -->
+        <div class="product-colors">
+          <span class="label-bold">Chọn màu sắc:</span>
+          <div class="color-options">
+            <label class="color-circle white">
+              <input type="radio" name="color" value="Trắng" checked>
+              <span></span>
+            </label>
+
+            <label class="color-circle black">
+              <input type="radio" name="color" value="Đen">
+              <span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Hiển thị giá và số lượng -->
+        <div class="price"><%= product.price.toLocaleString() %> VND</div>
+
+        <div class="quantity">
+          <label>Số lượng:</label>
+          <input type="number" name="quantity" min="1" value="1">
+        </div>
+
+        <div class="stock-status">Còn hàng</div>
+      
+      <% if (product.description) { %>
+        <p class="product-description"><%= product.description %></p>
+      <% } %>
+        <button type="submit" class="btn primary">THÊM VÀO GIỎ HÀNG</button>
+      </form>
+
+      <div class="store-link">
+        <a href="#">Tìm sản phẩm còn hàng trong cửa hàng</a>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

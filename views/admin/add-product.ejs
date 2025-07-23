@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thêm sản phẩm</title>
+</head>
+<body>
+  <h1>Thêm sản phẩm mới</h1>
+  <form method="POST" action="/admin/products/add" enctype="multipart/form-data">
+    <label>Tên:</label><br>
+    <input type="text" name="name" required><br>
+
+    <label>Giá:</label><br>
+    <input type="number" name="price" required><br>
+
+    <label>Mô tả:</label><br>
+    <textarea name="description"></textarea><br>
+
+    <label>Ảnh:</label><br>
+    <input type="file" name="image"><br>
+    <label for="category">Danh mục:</label>
+    <select name="category" required>
+    <option value="nam">Nam</option>
+    <option value="nu">Nữ</option>
+    <option value="treem">Trẻ em</option>
+    </select>
+    <br>
+
+    <h3>Số lượng theo size:</h3>
+    <label>S:</label> <input type="number" name="sizes[S]" value="0"><br>
+    <label>M:</label> <input type="number" name="sizes[M]" value="0"><br>
+    <label>L:</label> <input type="number" name="sizes[L]" value="0"><br>
+    <label>XL:</label> <input type="number" name="sizes[XL]" value="0"><br>
+
+    <button type="submit">Thêm sản phẩm</button>
+  </form>
+</body>
+</html>

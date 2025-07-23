@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 16px;
+            width: 200px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        .product-card a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+        .price {
+            margin-top: 8px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <h1>Chào <%= user.username %>!</h1>
+    <h2>Danh sách sản phẩm</h2>
+
+    <div class="product-grid">
+        <% products.forEach(product => { %>
+            <div class="product-card">
+                <a href="/products/<%= product.id %>">
+                    <img src="<%= product.image || '/images/default.jpg' %>" alt="<%= product.name %>">
+                    <div><%= product.name %></div>
+                </a>
+                <div class="price"><%= product.price.toLocaleString() %> VNĐ</div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

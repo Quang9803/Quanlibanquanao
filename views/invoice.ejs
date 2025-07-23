@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hóa đơn</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="invoice-container">
+  <h1>Hóa đơn mua hàng</h1>
+    <p><strong>Mã đơn hàng:</strong> <%= order.id %></p>
+    <p><strong>Khách hàng:</strong> <%= order.username %></p>
+    <p><strong>Ngày đặt:</strong> <%= new Date(order.date).toLocaleString() %></p>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Size</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+        </tr>
+        <% order.items.forEach(item => { %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.size %></td>
+                <td><%= item.quantity %></td>
+                <td><%= item.price.toLocaleString() %> VNĐ</td>
+                <td><%= (item.price * item.quantity).toLocaleString() %> VNĐ</td>
+            </tr>
+        <% }) %>
+    </table>
+
+    <div style="text-align: right; margin-top: 20px;">
+    <h3>Tạm tính: <%= order.totalAmount.toLocaleString() %> VNĐ</h3>
+    <h3>Thuế (8%): <%= order.tax.toLocaleString() %> VNĐ</h3>
+    <h2>Tổng cộng: <%= order.grandTotal.toLocaleString() %> VNĐ</h2>
+</div>
+
+    <div class="invoice-buttons">
+    <button onclick="window.print()">In hóa đơn</button>
+    <a href="/products"><button>Tiếp tục mua sắm</button></a>
+  </div>
+</div>
+</body>
+</html>

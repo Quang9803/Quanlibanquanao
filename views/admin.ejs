@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .btn_xoa_sua {
+            width: 80px;
+            height: 40px;
+            font-size: 16px;
+            margin: 4px auto;
+            border: 1px solid #999;
+            cursor: pointer;
+            display: block;
+        }
+
+        .btn_xoa_sua:hover {
+            background-color: #ddd;
+        }
+
+        .action-form {
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-header">
+        
+        <h1>Chào quản trị viên <%= user.username %></h1>
+        <div class="admin-actions">
+            <a href="/admin/users" class="btn btn-primary">Quản lý người dùng</a>
+            <a href="/admin/statistics" class="admin-btn">Xem thống kê</a>
+            <a href="/logout" class="admin-btn logout">Đăng xuất</a>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <h2>Danh sách sản phẩm</h2>
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Danh mục</th>
+                <th>Mô tả</th>
+                <th>Hành động</th>
+            </tr>
+            <% products.forEach(product => { %>
+                <tr>
+                    <td>
+                        <% if (product.image) { %>
+                            <img src="<%= product.image %>" width="80">
+                        <% } else { %>
+                            Không có ảnh
+                        <% } %>
+                    </td>
+                    <td><%= product.name %></td>
+                    <td><%= product.price.toLocaleString() %> VNĐ</td>
+                    <td><%= product.category || 'Không rõ' %></td>
+                    <td><%= product.description %></td>
+                    <td>
+                        <!-- Nút Sửa -->
+                        <form method="GET" action="/admin/products/edit/<%= product.id %>" class="action-form">
+                            <button type="submit" class="action-btn edit">Sửa</button>
+                        </form>
+
+                        <!-- Nút Nhập hàng -->
+                        <form method="GET" action="/admin/products/import/<%= product.id %>" class="action-form">
+                             <button type="submit" class="action-btn import">Nhập hàng</button>
+                        </form>
+
+
+
+                        <!-- Nút Xóa -->
+                        <form method="POST" action="/admin/products/delete/<%= product.id %>" onsubmit="return confirm('Bạn có chắc muốn xóa?')" class="action-form">
+                            <button class="action-btn delete">Xóa</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+
+        <h2>Thêm sản phẩm mới</h2>
+        <form method="POST" action="/admin/products/add" enctype="multipart/form-data">
+            <label>Tên sản phẩm:</label>
+            <input type="text" name="name" required><br>
+
+            <label>Giá:</label>
+            <input type="number" name="price" required><br>
+
+            <label>Mô tả:</label>
+            <textarea name="description" rows="3" required></textarea><br>
+
+            <label>Danh mục:</label>
+            <select name="category" required>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Trẻ em">Trẻ em</option>
+            </select><br>
+
+            <label>Hình ảnh:</label>
+            <input type="file" name="image" accept="image/*" required><br>
+
+            <label>Số lượng theo size:</label><br>
+            <label>S: <input type="number" name="sizeS" min="0" value="0"></label>
+            <label>M: <input type="number" name="sizeM" min="0" value="0"></label>
+            <label>L: <input type="number" name="sizeL" min="0" value="0"></label>
+            <label>XL: <input type="number" name="sizeXL" min="0" value="0"></label><br><br>
+
+            <button type="submit" class="btn-primary">Thêm sản phẩm</button>
+        </form>
+    </div>
+</body>
+</html>

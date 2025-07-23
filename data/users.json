@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "123456",
+    "role": "admin",
+    "cart": [],
+    "name": "Admin",
+    "email": "Admin@gmail.com",
+    "address": "828 Sư Vạn Hạnh Quận 10"
+  },
+  {
+    "id": 1750928857340,
+    "username": "quang",
+    "password": "123456",
+    "role": "user",
+    "cart": [],
+    "favorites": [],
+    "name": "Phan Vinh Quang",
+    "email": "quangphan9803@gmail.com",
+    "address": "828 Sư Vạn Hạnh Quận 10"
+  },
+  {
+    "id": 1750929771338,
+    "username": "quang1",
+    "password": "123456",
+    "role": "user",
+    "cart": [
+      {
+        "id": 1001,
+        "name": "Áo sơ mi trắng",
+        "price": 250000,
+        "description": "Áo sơ mi trắng công sở, vải cotton.",
+        "quantity": 1
+      },
+      {
+        "id": 1002,
+        "name": "Quần jeans nam",
+        "price": 400000,
+        "description": "Quần jeans nam form slimfit, co giãn.",
+        "quantity": 3
+      }
+    ],
+    "name": "Quang1",
+    "email": "Q@gmail.com",
+    "address": "828 Sư Vạn Hạnh Quận 10"
+  }
+]
