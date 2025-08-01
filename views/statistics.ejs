@@ -7,58 +7,65 @@
 </head>
 <body>
     <%- include('partials/header') %>
-    <h1>Thống kê doanh thu</h1>
-    <a href="/admin/products" class="back-btn">← Quay về quản lý sản phẩm</a>
 
-    <div class="revenue-container">
-        <h2>Tổng quan</h2>
-        <p>Tổng số đơn hàng: <strong><%= totalOrders %></strong></p>
-        <p>Tổng doanh thu (chưa thuế): <strong><%= totalRevenue.toLocaleString() %> VNĐ</strong></p>
+    <div class="container">
+        <h1> Thống kê doanh thu</h1>
+        <a href="/admin/products" class="back-btn">← Quay về quản lý sản phẩm</a>
 
-    <% 
-        const totalTax = Math.round(totalRevenue * 0.08);
-    const totalAfterTax = totalRevenue + totalTax;
-    %>
-        <p>Tổng tiền thuế (8%): <strong><%= totalTax.toLocaleString() %> VNĐ</strong></p>
-        <p>Tổng doanh thu sau thuế: <strong><%= totalAfterTax.toLocaleString() %> VNĐ</strong></p>
+        <div class="revenue-summary">
+            <h2>Tổng quan</h2>
+            <p><strong>Tổng số đơn hàng:</strong> <%= totalOrders %></p>
+            <p><strong>Tổng doanh thu (chưa thuế):</strong> <%= totalRevenue.toLocaleString() %> VNĐ</p>
 
+            <% 
+                const totalTax = Math.round(totalRevenue * 0.08);
+                const totalAfterTax = totalRevenue + totalTax;
+            %>
+            <p><strong>Thuế (8%):</strong> <%= totalTax.toLocaleString() %> VNĐ</p>
+            <p><strong>Tổng doanh thu sau thuế:</strong> <%= totalAfterTax.toLocaleString() %> VNĐ</p>
+        </div>
 
-        <h2>Chi tiết đơn hàng</h2>
+        <div class="order-details">
+            <h2>Chi tiết đơn hàng</h2>
+            <% if (orders.length === 0) { %>
+                <p>Chưa có đơn hàng nào.</p>
+            <% } else { %>
+                <% orders.forEach(order => { %>
+                    <div class="order-box">
+                        <p><strong>Mã đơn:</strong> <%= order.id %></p>
+                        <p><strong>Khách hàng:</strong> <%= order.user %></p>
+                        <p><strong>Thời gian đặt:</strong> <%= order.date %></p>
 
-        <% if (orders.length === 0) { %>
-            <p>Chưa có đơn hàng nào.</p>
-        <% } else { %>
-            <% orders.forEach(order => { %>
-                <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
-                    <p><strong>Mã đơn:</strong> <%= order.id %></p>
-                    <p><strong>Khách hàng:</strong> <%= order.user %></p>
-                    <p><strong>Thời gian đặt:</strong> <%= order.date %></p>
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Size</th>
+                                    <th>Số lượng</th>
+                                    <th>Đơn giá</th>
+                                    <th>Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% order.items.forEach(item => { %>
+                                    <tr>
+                                        <td><%= item.name %></td>
+                                        <td><%= item.size %></td>
+                                        <td><%= item.quantity %></td>
+                                        <td><%= item.price.toLocaleString() %></td>
+                                        <td><%= item.total.toLocaleString() %></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
 
-                    <table border="1" cellpadding="5" cellspacing="0">
-                        <tr>
-                            <th>Sản phẩm</th>
-                            <th>Size</th>
-                            <th>Số lượng</th>
-                            <th>Đơn giá</th>
-                            <th>Thành tiền</th>
-                        </tr>
-                        <% order.items.forEach(item => { %>
-                            <tr>
-                                <td><%= item.name %></td>
-                                <td><%= item.size %></td>
-                                <td><%= item.quantity %></td>
-                                <td><%= item.price.toLocaleString() %></td>
-                                <td><%= item.total.toLocaleString() %></td>
-                            </tr>
-                        <% }) %>
-                    </table>
-
-                    <p><strong>Tạm tính:</strong> <%= order.subtotal.toLocaleString() %> VNĐ</p>
-                    <p><strong>Thuế (8%):</strong> <%= order.tax.toLocaleString() %> VNĐ</p>
-                    <p><strong>Tổng cộng:</strong> <%= order.grandTotal.toLocaleString() %> VNĐ</p>
-                </div>
-            <% }) %>
-        <% } %>
+                        <p><strong>Tạm tính:</strong> <%= order.subtotal.toLocaleString() %> VNĐ</p>
+                        <p><strong>Thuế (8%):</strong> <%= order.tax.toLocaleString() %> VNĐ</p>
+                        <p><strong>Tổng cộng:</strong> <%= order.grandTotal.toLocaleString() %> VNĐ</p>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
     </div>
 </body>
 </html>

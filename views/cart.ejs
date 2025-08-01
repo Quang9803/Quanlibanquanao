@@ -1,69 +1,79 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Giỏ hàng</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <%- include('partials/header') %>
-    <a href="/products">← Tiếp tục mua</a> 
-    <div class="cart-container">
-        <h1>Giỏ hàng của bạn</h1>
-        <% if (message) { %>
-            <p style="color: green;"><%= message %></p>
-        <% } %>
+  <%- include('partials/header') %>
+<div class="side-banner left-banner">
+  <img src="/images/banner-left.jpg" alt="Quảng cáo trái">
+</div>
 
-        <% if (cart.length === 0) { %>
-            <p>Giỏ hàng của bạn đang trống.</p>
-        <% } else { %>
-            <table border="1" cellpadding="8">
-            <tr>
-                <th>Sản phẩm</th>
-                <th>Giá</th>
-                <th>Size</th>
-                <th>Màu</th>
-                <th>Số lượng</th>
-                <th>Thành tiền</th>
-                <th>Xóa</th>
-            </tr>
+<div class="side-banner right-banner">
+  <img src="/images/banner-right.jpg" alt="Quảng cáo phải">
+</div>
+  <div class="cart-container">
+    <a href="/products" class="back-link">← Tiếp tục mua</a>
+    <h1>Giỏ hàng của bạn</h1>
 
-            <% cart.forEach(item => { 
-                const encodedSize = encodeURIComponent(item.size);
-                const encodedColor = encodeURIComponent(item.color || 'Không chọn');
-            %>
-            <tr>
-                <td><%= item.name %></td>
-                <td><%= item.price.toLocaleString() %> VNĐ</td>
-                <td><%= item.size %></td>
-                <td><%= item.color || 'Không chọn' %></td>
+    <% if (message) { %>
+      <p class="success-message"><%= message %></p>
+    <% } %>
 
-                <td>
-                    <a href="/cart/update/<%= item.id %>/<%= encodedSize %>/<%= encodedColor %>/decrease">−</a>
-                    <%= item.quantity %>
-                    <a href="/cart/update/<%= item.id %>/<%= encodedSize %>/<%= encodedColor %>/increase">+</a>
-                </td>
+    <% if (cart.length === 0) { %>
+      <p>Giỏ hàng của bạn đang trống.</p>
+    <% } else { %>
+      <table class="cart-table">
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Giá</th>
+          <th>Size</th>
+          <th>Màu</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+          <th>Xóa</th>
+        </tr>
 
-                <td><%= (item.price * item.quantity).toLocaleString() %> VNĐ</td>
+        <% cart.forEach(item => { 
+          const encodedSize = encodeURIComponent(item.size);
+          const encodedColor = encodeURIComponent(item.color || 'Không chọn');
+        %>
+        <tr>
+          <td>
+            <% if (item.image) { %>
+              <img src="<%= item.image %>" alt="<%= item.name %>" class="cart-item-img">
+            <% } %>
+            <span><%= item.name %></span>
+          </td>
+          <td><%= item.price.toLocaleString() %> VNĐ</td>
+          <td><%= item.size %></td>
+          <td><%= item.color || 'Không chọn' %></td>
+          <td>
+            <a class="qty-btn" href="/cart/update/<%= item.id %>/<%= encodedSize %>/<%= encodedColor %>/decrease">−</a>
+            <span class="qty"><%= item.quantity %></span>
+            <a class="qty-btn" href="/cart/update/<%= item.id %>/<%= encodedSize %>/<%= encodedColor %>/increase">+</a>
+          </td>
+          <td><%= (item.price * item.quantity).toLocaleString() %> VNĐ</td>
+          <td>
+            <a class="remove-btn" href="/cart/remove/<%= item.id %>/<%= encodedSize %>/<%= encodedColor %>">Xóa</a>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
 
-                <td>
-                    <a href="/cart/remove/<%= item.id %>/<%= encodedSize %>/<%= encodedColor %>">Xóa</a>
-                </td>
-            </tr>
-            <% }) %>
-        </table>
+      <div class="cart-summary">
+        <p><strong>Tạm tính:</strong> <%= total.toLocaleString() %> VNĐ</p>
+        <p><strong>Thuế (8%):</strong> <%= taxAmount.toLocaleString() %> VNĐ</p>
+        <p><strong>Tổng cộng:</strong> <%= grandTotal.toLocaleString() %> VNĐ</p>
+      </div>
 
-            <div class="cart-summary" style="text-align: right; margin-top: 30px; font-size: 18px;">
-                <p><strong>Tạm tính:</strong> <%= total.toLocaleString() %> VNĐ</p>
-                <p><strong>Thuế (8%):</strong> <%= taxAmount.toLocaleString() %> VNĐ</p>
-                <p><strong>Tổng cộng:</strong> <%= grandTotal.toLocaleString() %> VNĐ</p>
-            </div>
-
-            <form action="/cart/checkout" method="POST">
-                <button class="checkout-btn">Đặt hàng</button>
-            </form>
-        <% } %>
-    </div>
-    <%- include('partials/footer') %>
+      <form action="/cart/checkout" method="POST">
+        <button class="checkout-btn">Đặt hàng</button>
+      </form>
+    <% } %>
+  </div>
+  <%- include('partials/footer') %>
 </body>
 </html>

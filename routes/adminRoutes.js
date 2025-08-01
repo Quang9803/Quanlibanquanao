@@ -35,9 +35,10 @@ router.get('/statistics', adminController.getStatistics);
 
 // Trang nhập hàng tổng quát (nếu có)
 router.get('/import', adminController.getImportPage);
-router.post('/import', adminController.handleImportProduct);
+//router.post('/import', adminController.handleImportProduct);
 //quản lý người dùng 
 router.get('/users', adminController.getUserList);
 router.post('/users/delete/:id', adminController.deleteUser);
+
 module.exports = router;
 

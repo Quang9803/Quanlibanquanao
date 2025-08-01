@@ -109,11 +109,15 @@ exports.getStatistics = (req, res) => {
     const orders = readJSON(ordersFile);
     const users = readJSON(usersFile);
     const products = readJSON(productsFile);
-
+    const revenueByMonth = {};
     let totalRevenue = 0;
     const taxRate = 0.08;
 
-    const detailedOrders = orders.map(order => {
+    // Sắp xếp đơn hàng theo ngày giảm dần (mới nhất trước)
+orders.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const detailedOrders = orders.map(order => {
+
         const user = users.find(u => u.id === order.userId);
         let items = order.items || [];
 

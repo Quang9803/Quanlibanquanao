@@ -1582,5 +1582,544 @@
     "tax": 71920,
     "grandTotal": 970920,
     "date": "2025-07-23T07:29:08.568Z"
+  },
+  {
+    "id": 1753981870826,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570699796,
+        "name": "ÁO SƠ MI CHỐNG NHĂN REGULAR FIT",
+        "price": 499999,
+        "description": "Áo sơ mi bằng vải dệt thoi có bề mặt chống nhăn. Cổ bẻ, nẹp khuy liền, cầu vai phía sau và vạt tròn. Tay dài với măng sét cài khuy điều chỉnh và nẹp tay áo có khuy nối. Dáng vừa để mặc thoải mái và tạo dáng cổ điển.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751570699793.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "XL",
+        "color": "Trắng",
+        "quantity": 7
+      }
+    ],
+    "totalAmount": 3499993,
+    "tax": 279999.44,
+    "grandTotal": 3779992.44,
+    "date": "2025-07-31T17:11:10.826Z"
+  },
+  {
+    "id": 1753990434010,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570492423,
+        "name": "ÁO POLO NHĂN LOOSE FIT",
+        "price": 499000,
+        "description": "Áo polo ngắn tay bằng vải nhăn có cổ, khoá kéo bên trên, vai ráp trễ và vạt ngang có đường xẻ ở mỗi bên. Dáng rộng để mặc thoải mái nhưng không bị thụng.",
+        "category": "Nam",
+        "image": "/images/product_1751570502618.avif",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 14
+      },
+      {
+        "id": 1751569753938,
+        "name": "ÁO POLO COOLMAX® SLIM FIT",
+        "price": 399000,
+        "description": "Áo polo bằng thun cá sấu nhẹ làm từ cotton pha, có cổ, nẹp khuy và tay ngắn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn. Áo kết hợp vải tính năng COOLMAX® - một dạng sợi polyester độc đáo, mềm mại, thoải mái và nhanh khô giúp hút ẩm và điều chỉnh nhiệt độ hiệu quả.",
+        "category": "Nam",
+        "image": "/images/product_1751570243169.avif",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "size": "XL",
+        "color": "Đen",
+        "quantity": 1
+      },
+      {
+        "id": 1751572590236,
+        "name": "ÁO THUN IN HÌNH",
+        "price": 249000,
+        "description": "Áo thun dáng rộng bằng cotton jersey mềm có hoạ tiết in. Viền gân nổi quanh cổ và vai ráp trễ nhiều.",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572590233.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      },
+      {
+        "id": 1751571484294,
+        "name": "ÁO BIKINI CÓ ĐỆM",
+        "price": 399000,
+        "description": "Áo bikini có lớp lót với dây vai có thể điều chỉnh và cúp ngực có miếng đệm có thể tháo rời giúp tạo dáng ngực và đỡ ngực tốt. Không có khoá cài.",
+        "category": "Nữ",
+        "image": "/images/product_1751571484291.avif",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      },
+      {
+        "id": 1751569753938,
+        "name": "ÁO POLO COOLMAX® SLIM FIT",
+        "price": 399000,
+        "description": "Áo polo bằng thun cá sấu nhẹ làm từ cotton pha, có cổ, nẹp khuy và tay ngắn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn. Áo kết hợp vải tính năng COOLMAX® - một dạng sợi polyester độc đáo, mềm mại, thoải mái và nhanh khô giúp hút ẩm và điều chỉnh nhiệt độ hiệu quả.",
+        "category": "Nam",
+        "image": "/images/product_1751570243169.avif",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      },
+      {
+        "id": 1751570326886,
+        "name": "ÁO POLO COOLMAX® SLIM FIT",
+        "price": 399,
+        "description": "Áo polo bằng thun cá sấu nhẹ làm từ cotton pha, có cổ, nẹp khuy và tay ngắn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn. Áo kết hợp vải tính năng COOLMAX® - một dạng sợi polyester độc đáo, mềm mại, thoải mái và nhanh khô giúp hút ẩm và điều chỉnh nhiệt độ hiệu quả.",
+        "category": "Nam",
+        "image": "/images/product_1751570326880.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      },
+      {
+        "id": 1751570699796,
+        "name": "ÁO SƠ MI CHỐNG NHĂN REGULAR FIT",
+        "price": 499999,
+        "description": "Áo sơ mi bằng vải dệt thoi có bề mặt chống nhăn. Cổ bẻ, nẹp khuy liền, cầu vai phía sau và vạt tròn. Tay dài với măng sét cài khuy điều chỉnh và nẹp tay áo có khuy nối. Dáng vừa để mặc thoải mái và tạo dáng cổ điển.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751570699793.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      },
+      {
+        "id": 1751571430774,
+        "name": "XÀ RÔNG",
+        "price": 399000,
+        "description": "Xà rông dệt thoi mỏng nhẹ có thể buộc phía trước và mặc như chân váy",
+        "category": "Nữ",
+        "image": "/images/product_1751571430771.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 9331398,
+    "tax": 746511.84,
+    "grandTotal": 10077909.84,
+    "date": "2025-07-31T19:33:54.010Z"
+  },
+  {
+    "id": 1753990469117,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571319359,
+        "name": "QUẦN SHORT LINEN PHA REGULAR FIT",
+        "price": 699000,
+        "description": "Quần short bằng cotton mỏng nhẹ và linen dệt thoi có cạp chun bọc có dây rút, nẹp khoá kéo cài khuy, túi hai bên và một túi sau mổ viền. Dáng vừa để mặc thoải mái và tạo dáng cổ điển. Cotton pha linen kết hợp sự mềm mại của cotton với độ bền của linen, tạo ra một loại vải đẹp, có vân nổi, thoáng khí và rủ mềm hoàn hảo.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751571319356.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 699000,
+    "tax": 55920,
+    "grandTotal": 754920,
+    "date": "2025-07-31T19:34:29.117Z"
+  },
+  {
+    "id": 1753990597315,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571767643,
+        "name": "ÁO BƠI MỘT MẢNH QUÂY NGANG CÓ ĐỆM NGỰC",
+        "price": 499000,
+        "description": "Áo bơi một mảnh quây ngang lót toàn bộ có dây vai có thể điều chỉnh và tháo rời và cúp ngực có miếng đệm có thể tháo rời giúp tạo dáng ngực và đỡ ngực tốt. Viền silicon ẩn bên trên để giữ cố định và phía sau che vừa.\r\n",
+        "category": "Nữ",
+        "image": "/images/product_1751571767641.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 499000,
+    "tax": 39920,
+    "grandTotal": 538920,
+    "date": "2025-07-31T19:36:37.315Z"
+  },
+  {
+    "id": 1753990801449,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570378174,
+        "name": "ÁO POLO DENIM LOOSE FIT",
+        "price": 799000,
+        "description": "Áo polo ngắn tay bằng cotton denim có cổ, nẹp khuy, túi ngực may đáp và vạt ngang. Dáng rộng để mặc thoải mái nhưng không bị thụng.",
+        "category": "Nam",
+        "image": "/images/product_1751570378171.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 799000,
+    "tax": 63920,
+    "grandTotal": 862920,
+    "date": "2025-07-31T19:40:01.449Z"
+  },
+  {
+    "id": 1753990862063,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571901721,
+        "name": "QUẦN BIKINI TANGA THẮT NƠ",
+        "price": 299000,
+        "description": "Quần bikini lót toàn bộ với viền vắt sổ. Cạp vừa, phía sau che vừa và dây buộc hai bên có hạt cườm giả ngọc trai ở hai đầu.",
+        "category": "Nữ",
+        "image": "/images/product_1751571901718.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 299000,
+    "tax": 23920,
+    "grandTotal": 322920,
+    "date": "2025-07-31T19:41:02.063Z"
+  },
+  {
+    "id": 1753990888952,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571993998,
+        "name": "CHÂN VÁY XẾP LY KÈM THẮT LƯNG",
+        "price": 899000,
+        "description": "Chân váy dài ngang bắp chân dệt chéo có khoá kéo ẩn ở một bên eo và thắt lưng có thể tháo rời bằng vải tráng phủ. Ly hộp được may cố định, tạo dáng chữ A tôn dáng. Không có lớp lót.\r\n",
+        "category": "Nữ",
+        "image": "/images/product_1751571993996.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 899000,
+    "tax": 71920,
+    "grandTotal": 970920,
+    "date": "2025-07-31T19:41:28.952Z"
+  },
+  {
+    "id": 1753990961043,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570652113,
+        "name": "ÁO SƠ MI CO GIÃN SLIM FIT",
+        "price": 699000,
+        "description": "Áo sơ mi bằng vải dệt thoi co giãn làm từ cotton pha có lá cổ cắt vát, nẹp khuy liền và cầu vai phía sau. Tay dài với măng sét cài khuy điều chỉnh và nẹp tay áo có khuy nối. Vạt hơi tròn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn.\r\n",
+        "category": "Nam",
+        "image": "/images/product_1751570652111.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 699000,
+    "tax": 55920,
+    "grandTotal": 754920,
+    "date": "2025-07-31T19:42:41.043Z"
+  },
+  {
+    "id": 1753991175665,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751572108866,
+        "name": "CHÂN VÁY JERSEY LẤP LÁNH",
+        "price": 149000,
+        "description": "Chân váy bằng jersey gân nổi hơi óng ánh. Đai cạp to bản, co giãn và phần dưới xòe có viền vắt sổ.\r\n",
+        "category": "Nữ",
+        "image": "/images/product_1751572108864.avif",
+        "sizes": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 149000,
+    "tax": 11920,
+    "grandTotal": 160920,
+    "date": "2025-07-31T19:46:15.665Z"
+  },
+  {
+    "id": 1753991245698,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571856051,
+        "name": "QUẦN BIKINI",
+        "price": 149000,
+        "description": "Quần bikini lót toàn bộ với cạp vừa và phía sau che vừa.",
+        "category": "Nữ",
+        "image": "/images/product_1751571856048.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 149000,
+    "tax": 11920,
+    "grandTotal": 160920,
+    "date": "2025-07-31T19:47:25.698Z"
+  },
+  {
+    "id": 1753991317068,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571611793,
+        "name": "ÁO BIKINI NÂNG NGỰC",
+        "price": 499000,
+        "description": "Áo bikini có lớp lót với cúp ngực có gọng và đệm giúp tạo dáng ngực đầy đặn hơn và khe ngực sâu hơn. Dây vai có thể điều chỉnh và vòng kim loại trang trí ở giữa ngực. Cài khoá móc điều chỉnh được ở phía sau.",
+        "category": "Nữ",
+        "image": "/images/product_1751571611792.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 499000,
+    "tax": 39920,
+    "grandTotal": 538920,
+    "date": "2025-07-31T19:48:37.068Z"
+  },
+  {
+    "id": 1754014777613,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751571128008,
+        "name": "QUẦN DÀI COTTON RELAXED FIT",
+        "price": 999000,
+        "description": "Quần dài bằng cotton poplin có cạp chun bọc với dây rút ẩn, nẹp kéo khoá giả, túi chéo hai bên và túi sau mổ viền. Dáng thoải mái để mặc dáng casual nhưng không bị thụng.",
+        "category": "Nam",
+        "image": "/images/product_1751571128005.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 6
+      }
+    ],
+    "totalAmount": 5994000,
+    "tax": 479520,
+    "grandTotal": 6473520,
+    "date": "2025-08-01T02:19:37.613Z"
+  },
+  {
+    "id": 1754015865926,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751572545479,
+        "name": "ÁO NỈ IN HÌNH",
+        "price": 299000,
+        "description": "Áo bằng vải nỉ in hình làm từ cotton pha với mặt trái chải xù mềm. Cổ tròn, viền gân nổi, vai ráp trễ và tay dài. Cổ tay và gấu bo gân nổi.",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572545475.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 299000,
+    "tax": 23920,
+    "grandTotal": 322920,
+    "date": "2025-08-01T02:37:45.926Z"
+  },
+  {
+    "id": 1754016787443,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751570326886,
+        "name": "ÁO POLO COOLMAX® SLIM FIT",
+        "price": 399,
+        "description": "Áo polo bằng thun cá sấu nhẹ làm từ cotton pha, có cổ, nẹp khuy và tay ngắn. Dáng ôm gọn các đường cong trên cơ thể tạo dáng vừa vặn. Áo kết hợp vải tính năng COOLMAX® - một dạng sợi polyester độc đáo, mềm mại, thoải mái và nhanh khô giúp hút ẩm và điều chỉnh nhiệt độ hiệu quả.",
+        "category": "Nam",
+        "image": "/images/product_1751570326880.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Trắng",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 399,
+    "tax": 31.92,
+    "grandTotal": 430.92,
+    "date": "2025-08-01T02:53:07.443Z"
+  },
+  {
+    "id": 1754019411807,
+    "userId": 1750928857340,
+    "username": "quang",
+    "items": [
+      {
+        "id": 1751572499166,
+        "name": "BỘ ĐỒ NGỦ COTTON JERSEY IN HÌNH",
+        "price": 399000,
+        "description": "Bộ đồ ngủ gồm áo và quần bằng cotton jersey mềm, in hình. Áo dài tay có viền gân nổi quanh cổ và cổ tay. Quần có cạp chun bọc mềm và gấu bo gân nổi.\r\n",
+        "category": "Trẻ em",
+        "image": "/images/product_1751572499163.avif",
+        "sizes": {
+          "S": 1,
+          "M": 1,
+          "L": 1,
+          "XL": 1
+        },
+        "size": "M",
+        "color": "Đen",
+        "quantity": 2
+      }
+    ],
+    "totalAmount": 798000,
+    "tax": 63840,
+    "grandTotal": 861840,
+    "date": "2025-08-01T03:36:51.807Z"
   }
 ]

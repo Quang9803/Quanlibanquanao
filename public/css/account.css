@@ -1,0 +1,119 @@
+.account-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 40px 20px;
+  gap: 40px;
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+}
+
+.account-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.account-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.account-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.account-container input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+.account-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.account-container button {
+  width: 100%;
+  padding: 12px;
+  background: #28a745;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.account-container button:hover {
+  background: #1e7e34;
+}
+
+.side-image {
+  position: absolute;
+  top: 200px;
+  width: 300px;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  animation: floatFade 1s ease-out forwards, floatY 4s ease-in-out infinite;
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+
+
+.side-image:hover {
+  transform: scale(1.05); /* Phóng nhẹ khi hover */
+}
+.side-image.left {
+  background-image: url("/images/account-left.jpg");
+  left: 40px;
+}
+
+.side-image.right {
+  background-image: url("/images/account-right.jpg");
+right: 40px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes floatY {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Hiệu ứng mờ dần khi vào trang + kết hợp lơ lửng */
+@keyframes floatFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

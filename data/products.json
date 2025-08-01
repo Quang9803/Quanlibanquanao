@@ -558,19 +558,5 @@
       "L": 1,
       "XL": 1
     }
-  },
-  {
-    "id": 1752802083469,
-    "name": "áo polo",
-    "price": 1200,
-    "description": "qưed",
-    "category": "Nam",
-    "image": "/images/product_1752802083463.jpg",
-    "sizes": {
-      "S": 0,
-      "M": 0,
-      "L": 0,
-      "XL": 0
-    }
   }
 ]

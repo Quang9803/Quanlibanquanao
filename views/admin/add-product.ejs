@@ -3,36 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <title>Thêm sản phẩm</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      animation: slideUp 0.7s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      box-sizing: border-box;
+      transition: border 0.3s;
+    }
+.btn-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #4CAF50;
+  background-color: #e8f5e9;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #c8e6c9;
+}
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: #333;
+    }
+
+    .btn-primary {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #45a049;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Thêm sản phẩm mới</h1>
-  <form method="POST" action="/admin/products/add" enctype="multipart/form-data">
-    <label>Tên:</label><br>
-    <input type="text" name="name" required><br>
+  <div class="container">
+    <a href="/admin/products" class="btn-back">← Trở về danh sách sản phẩm</a>
 
-    <label>Giá:</label><br>
-    <input type="number" name="price" required><br>
+    <h1>Thêm sản phẩm mới</h1>
+    <form method="POST" action="/admin/products/add" enctype="multipart/form-data">
+      <label>Tên sản phẩm:</label>
+      <input type="text" name="name" required>
 
-    <label>Mô tả:</label><br>
-    <textarea name="description"></textarea><br>
+      <label>Giá:</label>
+      <input type="number" name="price" required>
 
-    <label>Ảnh:</label><br>
-    <input type="file" name="image"><br>
-    <label for="category">Danh mục:</label>
-    <select name="category" required>
-    <option value="nam">Nam</option>
-    <option value="nu">Nữ</option>
-    <option value="treem">Trẻ em</option>
-    </select>
-    <br>
+      <label>Mô tả:</label>
+      <textarea name="description"></textarea>
 
-    <h3>Số lượng theo size:</h3>
-    <label>S:</label> <input type="number" name="sizes[S]" value="0"><br>
-    <label>M:</label> <input type="number" name="sizes[M]" value="0"><br>
-    <label>L:</label> <input type="number" name="sizes[L]" value="0"><br>
-    <label>XL:</label> <input type="number" name="sizes[XL]" value="0"><br>
+      <label>Ảnh:</label>
+      <input type="file" name="image">
 
-    <button type="submit">Thêm sản phẩm</button>
-  </form>
+      <label>Danh mục:</label>
+      <select name="category" required>
+        <option value="nam">Nam</option>
+        <option value="nu">Nữ</option>
+        <option value="treem">Trẻ em</option>
+      </select>
+
+      <h3>Số lượng theo size:</h3>
+      <label>Size S:</label>
+      <input type="number" name="sizes[S]" value="0">
+      <label>Size M:</label>
+      <input type="number" name="sizes[M]" value="0">
+      <label>Size L:</label>
+      <input type="number" name="sizes[L]" value="0">
+      <label>Size XL:</label>
+      <input type="number" name="sizes[XL]" value="0">
+
+      <button type="submit" class="btn-primary">Thêm sản phẩm</button>
+    </form>
+  </div>
 </body>
+
 </html>
