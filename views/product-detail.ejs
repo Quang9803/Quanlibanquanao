@@ -67,7 +67,15 @@
       <% if (product.description) { %>
         <p class="product-description"><%= product.description %></p>
       <% } %>
-        <button type="submit" class="btn primary">THÊM VÀO GIỎ HÀNG</button>
+        <div class="action-row">
+  <button type="submit" class="btn primary">THÊM VÀO GIỎ HÀNG</button>
+  <button type="button" class="btn favorite" id="favoriteBtn" title="Yêu thích sản phẩm">
+  <img src="/images/icons/heart-white.png" alt="Yêu thích" id="heartIcon" width="24">
+</button>
+
+</div>
+
+
       </form>
 
       <div class="store-link">
@@ -77,5 +85,16 @@
   </div>
 
   <%- include('partials/footer') %>
+  <script>
+  const btn = document.getElementById('favoriteBtn');
+  const icon = document.getElementById('heartIcon');
+  let liked = false;
+
+  btn.addEventListener('click', () => {
+    liked = !liked;
+    icon.src = liked ? '/images/icons/heart-black.png' : '/images/icons/heart-white.png';
+  });
+</script>
+
 </body>
 </html>
